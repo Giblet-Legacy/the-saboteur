@@ -1,0 +1,11 @@
+{
+  "name": "Use a fractional number instead of a decimal string (sign_v2)",
+  "target_file": "sc/forge-stack-governance-v6.sc.json",
+  "mutation": "json_edit_fractional",
+  "tool": "python sign_v2.py --verify",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "fractional number at declaration.sensitivity"
+  ],
+  "notes": "Threat 09 against sign_v2 (S2)."
+}

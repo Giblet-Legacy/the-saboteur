@@ -1,0 +1,11 @@
+{
+  "name": "Delete a .sig but keep the artefact (sign_v2)",
+  "target_file": "docs/datacube.md.sig",
+  "mutation": "delete",
+  "tool": "python sign_v2.py --verify",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "datacube.md"
+  ],
+  "notes": "Threat 03 against the-full-stack hardening 6.2's sign_v2 (S1)."
+}

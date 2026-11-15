@@ -1,0 +1,11 @@
+{
+  "name": "Truncate the ledger mid-row (ledger_v2)",
+  "target_file": "ledger.jsonl",
+  "mutation": "truncate_mid_line",
+  "tool": "python ledger_v2.py verify",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "not valid json"
+  ],
+  "notes": "Threat 05 against ledger_v2 (L1): named, no traceback."
+}

@@ -4,6 +4,28 @@ CHANGELOG.md — build history for The Saboteur, latest entry at top.
 (The v1.0.0 entry below sits above the original title; it is kept as
 written. Entries from here on go at the top.)
 
+## [v0.3.1-dev] — 2026-11-15 — threats 13–17: the fixes, attacked
+
+### Good
+- Five new threat files aim the same attacks at the-full-stack's
+  hardening 6.2 layers (James: "yes to all 3"): 13 deleted .sig and 16
+  fractional number against `sign_v2.py --verify`; 14 truncated row and
+  15 replayed row against `ledger_v2.py verify`; 17 stale score against
+  `hal_v3.py seal`. All five PASS, each named for the right reason.
+- Full run: PASS 12, FAIL 1, UGLY 4, SKIP 0, real repo unchanged.
+
+### Bad
+- Threats 03, 05, 09, 11 and 12 stay red: they attack the original
+  tools (`sign.py`, `ledger.py`, `hal_v2.py`), which keep their gaps by
+  the Immutable Rule. The run therefore still exits 1. That is the
+  evidence for the layers, not a fault in them.
+
+### Ugly
+- Threat 17's clean run already fails: the example score (as_of
+  2026-08-08) is older than hal_v3's 30 days. It passes only because the
+  mutated run gives a new stale line. A fresh example score would make
+  it a cleaner test.
+
 ## [v0.3.0-dev] — 2026-11-15 — the honest harness (saboteur_v2)
 
 ### Good

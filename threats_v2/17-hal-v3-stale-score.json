@@ -1,0 +1,11 @@
+{
+  "name": "Feed a stale score file to hal_v3 seal",
+  "target_file": "leighton/example/validator-01.score.json",
+  "mutation": "json_edit_old_as_of",
+  "tool": "python hal_v3.py seal --seal-id saboteur-test --subject-event-hash ea870798380cce44d84a81e110cf2d51662154f867abb66436a2636b812c66d0 --decision allow --tier-req 3 --authoriser-score-file leighton/example/validator-01.score.json --output saboteur-seal.json",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "stale"
+  ],
+  "notes": "Threat 11 against hal_v3 (H1). The example score is itself older than the default 30 days, so the clean run already fails as stale; the mutated run must give a new stale line (a different as_of)."
+}

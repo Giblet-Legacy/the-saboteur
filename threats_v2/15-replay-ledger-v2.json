@@ -1,0 +1,11 @@
+{
+  "name": "Duplicate a ledger row (ledger_v2)",
+  "target_file": "ledger.jsonl",
+  "mutation": "duplicate_line",
+  "tool": "python ledger_v2.py verify",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "replay"
+  ],
+  "notes": "Threat 12 against ledger_v2 (L2)."
+}
