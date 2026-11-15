@@ -4,6 +4,30 @@ CHANGELOG.md — build history for The Saboteur, latest entry at top.
 (The v1.0.0 entry below sits above the original title; it is kept as
 written. Entries from here on go at the top.)
 
+## [v0.3.2-dev] — 2026-11-15 — threats 18–20: pinned hashes, governance-v7
+
+### Good
+- Three new threat files attack the-full-stack's hardening 6.3 and 6.4
+  layers. 18: change a document a live capsule pins by sha256 (CRLF on
+  `docs/glossary.md`), against `freeze_v3.py --check`. 19: put back a
+  COMPUTE-ON-FREEZE placeholder, against `freeze_v3.py --check`. 20: a
+  fractional number in governance-v7 itself, against `sign_v3.py
+  --verify`. All three PASS, named for the right reason; real repo
+  unchanged.
+
+### Bad
+- Run against the working tree before James signed the new capsules
+  (datacube-v2, hal-v2, manifest-v11, changelog-v2, step-spec-v2), so
+  the baselines already carried "unsigned" failures. The differential
+  judgement still needs the threat's own named line, so the verdicts
+  hold; re-run the full set after the signing.
+
+### Ugly
+- Threat 18 is the attack that found a real gap only by reading:
+  governance-v2..v6 pinned a glossary hash that never matched, and no
+  tool, this harness included, had a threat that could see it. A pinned
+  hash nobody compares is a promise nobody keeps.
+
 ## [v0.3.1-dev] — 2026-11-15 — threats 13–17: the fixes, attacked
 
 ### Good

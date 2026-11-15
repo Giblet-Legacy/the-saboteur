@@ -1,0 +1,12 @@
+{
+  "name": "Change a pinned document under a live capsule (freeze_v3)",
+  "target_file": "docs/glossary.md",
+  "mutation": "lf_to_crlf",
+  "tool": "python freeze_v3.py --check",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "glossary.md",
+    "does not match"
+  ],
+  "notes": "governance-v7 pins docs/glossary.md by sha256. Before freeze_v3 (the-full-stack hardening 6.4) nothing compared a pinned hash with its document: governance-v2..v6 pinned a glossary hash that never matched, and datacube-v1 / hal-v1 outlived a two-line edit of their documents."
+}

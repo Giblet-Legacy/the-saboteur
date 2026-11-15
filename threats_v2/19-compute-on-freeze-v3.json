@@ -1,0 +1,12 @@
+{
+  "name": "Put back a COMPUTE-ON-FREEZE placeholder (freeze_v3)",
+  "target_file": "sc/axiom-v1.sc.json",
+  "mutation": "set_compute_on_freeze",
+  "tool": "python freeze_v3.py --check",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "axiom-v1",
+    "COMPUTE-ON-FREEZE"
+  ],
+  "notes": "Threat 07 against freeze_v3: a live capsule left unfrozen is FAILED; a superseded one is only a NOTE."
+}

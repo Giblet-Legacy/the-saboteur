@@ -1,0 +1,12 @@
+{
+  "name": "Use a fractional number in a governance-v7 capsule (sign_v3)",
+  "target_file": "sc/forge-stack-governance-v7.sc.json",
+  "mutation": "json_edit_fractional",
+  "tool": "python sign_v3.py --verify",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "fractional number at declaration.sensitivity",
+    "governance-v7"
+  ],
+  "notes": "Threat 16 against sign_v3: governance-v7 ratifies number_encoding, so a fraction in a capsule it covers is FAILED, not grandfathered."
+}
