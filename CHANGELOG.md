@@ -4,6 +4,22 @@ CHANGELOG.md — build history for The Saboteur, latest entry at top.
 (The v1.0.0 entry below sits above the original title; it is kept as
 written. Entries from here on go at the top.)
 
+## [v0.3.3] — 2026-11-15 — frozen
+
+### Good
+- Frozen (James: "freeze them"). VERSION 0.3.0-dev -> 0.3.3: the v2
+  harness (`saboteur_v2.py`, `harness_guard_v2.py`, `mutations_v2.py`),
+  its five canaries and the 15 live threats in `threats_v2/`. A change
+  from here is a new layer or a new threat file.
+- At the freeze: 13/13 tests; main run PASS 15, FAIL 0, UGLY 0 against
+  the-full-stack, real repo unchanged.
+
+### Bad
+- Frozen before the S24 run; the phone runs it next.
+
+### Ugly
+- No ugly items. Nothing but VERSION and this entry changed.
+
 ## [v0.3.3-dev] — 2026-11-15 — the old-tool threats retired; first green run
 
 ### Good
