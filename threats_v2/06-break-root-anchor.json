@@ -1,0 +1,13 @@
+{
+  "name": "Break the root anchor in a consumer ledger",
+  "target_file": "consumer/cobblewright/ledger.jsonl",
+  "mutation": "replace_first_prev",
+  "tool": "python ledger.py verify --scope cobblewright",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "anchor",
+    "root",
+    "prev"
+  ],
+  "notes": "Unchanged from v1 apart from byte-safe line writing."
+}

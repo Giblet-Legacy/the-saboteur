@@ -1,0 +1,11 @@
+{
+  "name": "Flip one bit of one letter in a signed capsule",
+  "target_file": "sc/forge-stack-governance-v6.sc.json",
+  "mutation": "flip_byte_text",
+  "tool": "python sign.py --verify",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "forge-stack-governance-v6"
+  ],
+  "notes": "v1 flipped a byte to 0xFF-garbage (a JSON parse error) and sign.py already fails on a clean copy, so it could not fail. v2 keeps the file valid JSON; only the signature can catch it, and the new FAILED line must name the capsule."
+}

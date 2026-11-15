@@ -1,0 +1,11 @@
+{
+  "name": "Use an empty scp_id",
+  "target_file": "sc/forge-stack-governance-v6.sc.json",
+  "mutation": "json_edit_empty_scp_id",
+  "tool": "python sign.py --verify",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "scp_id"
+  ],
+  "notes": "Any edit also breaks the signature; PASS needs the scp_id rule itself named. A signature-only catch is UGLY: caught, but not for this reason."
+}

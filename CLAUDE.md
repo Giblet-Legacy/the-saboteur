@@ -28,3 +28,18 @@ A silent pass is the worst outcome. It is recorded as Ugly.
 S24/Termux and laptop/VS Code. State is confirmed, never assumed. LF-only.
 British English (-ise, artefact). Good/Bad/Ugly CHANGELOG, latest at top.
 Header discipline on every file and function.
+
+## v2 (2026-11-15)
+`saboteur_v2.py`, `harness_guard_v2.py`, `mutations_v2.py` and
+`threats_v2/` (SPEC_V2.md) are the layer over v1, which is never edited.
+Run `python saboteur_v2.py`. Rules learned from the v1 audit:
+- **A threat is judged against a clean baseline.** A tool that already
+  fails on an unmutated copy proves nothing unless the mutation adds a
+  new failure line that names the problem.
+- **Never sign with the owner's key.** Tools run with `FORGE_KEY_PATH`
+  set to a throwaway key in the scratch copy.
+- **Scratch only through the guard**, under the system temp directory;
+  tests use tmp_path, never the home folder.
+- **No catch-all keywords** ("fail") in `expect_error_contains`.
+- Findings in a target repo are reported here; fixing them is a new
+  layer in that repo, after James decides.

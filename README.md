@@ -49,3 +49,27 @@ production.
 
 ## Win condition
 Find at least one real silent pass in the current tools.
+
+## v2: the honest harness (2026-11-15)
+
+v1 (`saboteur.py`) is kept as it was, but its "12/12 PASS" is withdrawn
+(CHANGELOG). Run v2:
+
+    python saboteur_v2.py                      # attacks ../the-full-stack
+    python saboteur_v2.py --target ../scp-substrate --threats my_threats
+    python saboteur_v2.py --only 03            # one threat
+    python -m pytest -q tests                  # the harness proves itself
+
+On the phone, from the folder that holds the repos:
+
+    cd the-saboteur && git pull && python -m pytest -q tests && python saboteur_v2.py
+
+v2 proves the harness first (five canaries), copies the target into a
+guarded scratch folder under the system temp directory, runs each tool
+on the clean copy and again after one mutation, and passes a threat
+only if the mutated run shows a NEW failure line that names the
+problem. Tools run with a throwaway key, never yours. Exit 0: every
+threat passed; 1: a FAIL, UGLY or SKIP; 2: the harness is invalid.
+Threats are in `threats_v2/` (SPEC_V2.md §5).
+
+Status: 0.3.0-dev (VERSION). First honest run: PASS 7, FAIL 1, UGLY 4.

@@ -1,0 +1,14 @@
+{
+  "name": "Duplicate a ledger row (replay)",
+  "target_file": "ledger.jsonl",
+  "mutation": "duplicate_line",
+  "tool": "python ledger.py verify",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "duplicate",
+    "replay",
+    "already",
+    "seen"
+  ],
+  "notes": "An appended copy of row 0 also breaks the chain; PASS needs the replay named, not just the chain."
+}

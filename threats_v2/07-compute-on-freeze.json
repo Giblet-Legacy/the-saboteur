@@ -1,0 +1,11 @@
+{
+  "name": "Put back a COMPUTE-ON-FREEZE placeholder",
+  "target_file": "sc/axiom-v1.sc.json",
+  "mutation": "set_compute_on_freeze",
+  "tool": "python freeze_v2.py --check",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "axiom-v1"
+  ],
+  "notes": "freeze_v2 --check already fails on a clean copy (consumer/Long Con Generator/full_stack/changelog.sc.json), so v1 could not fail; v2 needs a new UNRESOLVED line naming axiom-v1."
+}

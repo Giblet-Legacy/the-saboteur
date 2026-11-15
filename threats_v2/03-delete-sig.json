@@ -1,0 +1,11 @@
+{
+  "name": "Delete a .sig but keep the artefact",
+  "target_file": "docs/datacube.md.sig",
+  "mutation": "delete",
+  "tool": "python sign.py --verify",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "datacube.md"
+  ],
+  "notes": "v1 deleted README.md.sig, which never existed (a no-op). sign.py's own rule: every non-JSON artefact a capsule's document field references must have a .sig."
+}

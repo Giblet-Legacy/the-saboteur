@@ -1,0 +1,14 @@
+{
+  "name": "Use a fractional number instead of a decimal string",
+  "target_file": "sc/forge-stack-governance-v6.sc.json",
+  "mutation": "json_edit_fractional",
+  "tool": "python sign.py --verify",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "float",
+    "decimal",
+    "fraction",
+    "canonical"
+  ],
+  "notes": "As 08: PASS needs the number rule named, not just the broken signature."
+}

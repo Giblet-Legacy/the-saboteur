@@ -1,0 +1,16 @@
+{
+  "name": "Feed a stale score file to hal_v2 seal",
+  "target_file": "leighton/example/validator-01.score.json",
+  "mutation": "json_edit_old_as_of",
+  "tool": "python hal_v2.py seal --seal-id saboteur-test --subject-event-hash ea870798380cce44d84a81e110cf2d51662154f867abb66436a2636b812c66d0 --decision allow --tier-req 3 --authoriser-score-file leighton/example/validator-01.score.json --output saboteur-seal.json",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "stale",
+    "expired",
+    "too old",
+    "as_of",
+    "ttl",
+    "age"
+  ],
+  "notes": "v1's file 11 called hal.py verify-score, a command that does not exist (argparse 'invalid choice' matched the keyword 'invalid'). The README's past-TTL threat: as_of moved back to 2025-01-01. The edit breaks the signature, so a signature-only catch is UGLY: HAL has no freshness rule to name."
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Convert LF to CRLF in an artefact with a .sig",
+  "target_file": "docs/glossary.md",
+  "mutation": "lf_to_crlf",
+  "tool": "python sign.py --verify",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "glossary.md"
+  ],
+  "notes": "v1 targeted README.md, which has no .sig. docs/glossary.md is stored LF and has docs/glossary.md.sig. This happened for real on 2026-11-15 (CHANGELOG.md, CRLF to LF)."
+}
