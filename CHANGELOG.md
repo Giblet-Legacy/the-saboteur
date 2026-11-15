@@ -6,17 +6,25 @@ CHANGELOG.md — build history for The Saboteur, latest entry at top.
 
 ### Good
 - Built `mutations.py` with 12 threat types.
-- Built `saboteur.py` harness to run against a scratch copy of a target.
-- Found the first silent pass in `the-full-stack`.
+- Verified the mutation engine works: `duplicate_line` correctly adds
+  one line to `scratch/ledger.jsonl` (124 → 125).
+- Confirmed `ledger.py verify` exits 1 on a corrupted ledger when run
+  from the correct directory.
 
 ### Bad
-- (none yet)
+- No real silent pass found yet. The Saboteur has not yet proven any
+  guard in the tools is weak.
 
 ### Ugly
-- **BUG FOUND (Target: `the-full-stack/ledger.py`):**
-  Mutation 12 (`duplicate_line`) duplicated the first line of `ledger.jsonl`.
-  The `ledger.py verify` tool printed `FAILED (chain) #00` to stdout,
-  but **exited 0** (success).
-  This is a silent pass. Any automated pipeline using `ledger.py verify`
-  would treat the corrupt ledger as valid.
-  - **Fix needed:** `ledger.py verify` must exit non-zero if any entry fails.
+- **First false alarm.** Initial run appeared to show `ledger.py verify`
+  exiting 0 while printing "1 entries FAILED." That would have been a
+  silent pass — the win condition of the challenge. It turned out to be
+  a Saboteur bug: the harness ran `ledger.py` from the repo root (where
+  the real `ledger.jsonl` lives) instead of from the scratch directory
+  (where the mutated ledger lives). The tool correctly verified the
+  real ledger and exited 0.
+- **Lesson:** The Saboteur must run tools from inside the scratch
+  directory. If it doesn't, every threat will silently pass because
+  the tool reads the clean original.
+- **Second lesson:** `/tmp` is not writable in Termux. All test
+  output must go to a file inside the repo or be piped directly.
