@@ -1,0 +1,12 @@
+{
+  "name": "Put back a COMPUTE-ON-FREEZE placeholder",
+  "target_file": "sc/axiom-v1.sc.json",
+  "mutation": "set_compute_on_freeze",
+  "tool": "python freeze_v2.py --check",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "unresolved",
+    "compute-on-freeze",
+    "fail"
+  ]
+}

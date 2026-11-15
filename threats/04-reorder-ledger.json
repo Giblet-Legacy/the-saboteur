@@ -1,0 +1,13 @@
+{
+  "name": "Reorder two ledger rows",
+  "target_file": "ledger.jsonl",
+  "mutation": "reorder_lines",
+  "tool": "python ledger.py verify",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "hash",
+    "chain",
+    "prev",
+    "fail"
+  ]
+}

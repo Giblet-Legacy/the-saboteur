@@ -1,0 +1,13 @@
+{
+  "name": "Delete a .sig but keep the artefact",
+  "target_file": "README.md.sig",
+  "mutation": "delete",
+  "tool": "python sign.py --verify",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "missing",
+    "not found",
+    "no signature",
+    "fail"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Flip one byte in a signed capsule",
+  "target_file": "sc/forge-stack-governance-v6.sc.json",
+  "mutation": "flip_byte",
+  "tool": "python sign.py --verify",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "signature",
+    "invalid",
+    "fail"
+  ]
+}

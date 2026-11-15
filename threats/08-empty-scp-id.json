@@ -1,0 +1,13 @@
+{
+  "name": "Use an empty scp_id",
+  "target_file": "sc/forge-stack-governance-v6.sc.json",
+  "mutation": "json_edit_empty_scp_id",
+  "tool": "python sign.py --verify",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "scp_id",
+    "invalid",
+    "empty",
+    "fail"
+  ]
+}

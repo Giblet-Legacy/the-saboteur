@@ -1,0 +1,12 @@
+{
+  "name": "Sign a score file with the wrong key (HAL silent pass test)",
+  "target_file": "leighton/example/validator-01.score.json",
+  "mutation": "re_sign_wrong_key",
+  "tool": "python hal_v2.py seal --seal-id test --subject-event-hash ea870798380cce44d84a81e110cf2d51662154f867abb66436a2636b812c66d0 --decision allow --tier-req 3 --authoriser-score-file leighton/example/validator-01.score.json --output seal-test.json",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "invalid",
+    "failed",
+    "signature"
+  ]
+}

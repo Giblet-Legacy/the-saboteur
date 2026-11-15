@@ -1,0 +1,13 @@
+{
+  "name": "Convert LF to CRLF in an artefact with a .sig",
+  "target_file": "README.md",
+  "mutation": "lf_to_crlf",
+  "tool": "python sign.py --verify",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "signature",
+    "hash",
+    "mismatch",
+    "fail"
+  ]
+}

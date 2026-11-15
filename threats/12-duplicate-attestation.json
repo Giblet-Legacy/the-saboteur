@@ -1,0 +1,13 @@
+{
+  "name": "Duplicate attestation",
+  "target_file": "ledger.jsonl",
+  "mutation": "duplicate_line",
+  "tool": "python ledger.py verify",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "duplicate",
+    "replay",
+    "already",
+    "fail"
+  ]
+}

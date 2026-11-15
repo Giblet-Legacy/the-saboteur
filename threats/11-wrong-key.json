@@ -1,0 +1,14 @@
+{
+  "name": "Sign a score file with the wrong key",
+  "target_file": "leighton/example/validator-01.score.json",
+  "mutation": "re_sign_wrong_key",
+  "tool": "python hal.py verify-score leighton/example/validator-01.score.json",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "key",
+    "signature",
+    "mismatch",
+    "invalid",
+    "fail"
+  ]
+}

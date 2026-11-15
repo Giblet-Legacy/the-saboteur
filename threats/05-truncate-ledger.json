@@ -1,0 +1,13 @@
+{
+  "name": "Truncate the ledger mid-row",
+  "target_file": "ledger.jsonl",
+  "mutation": "truncate_mid_line",
+  "tool": "python ledger.py verify",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "json",
+    "parse",
+    "decode",
+    "fail"
+  ]
+}
