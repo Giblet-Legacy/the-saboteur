@@ -4,6 +4,27 @@ CHANGELOG.md — build history for The Saboteur, latest entry at top.
 (The v1.0.0 entry below sits above the original title; it is kept as
 written. Entries from here on go at the top.)
 
+## [v0.3.3-dev] — 2026-11-15 — the old-tool threats retired; first green run
+
+### Good
+- Threats 03, 05, 09, 11 and 12 moved to `threats_v2/retired/` (James:
+  "retire the old"), with a README naming each original tool's gap and
+  the live threat that attacks its layer (13–17, 20). Kept, not deleted;
+  `--threats threats_v2/retired` still runs them.
+- Full run: PASS 15, FAIL 0, UGLY 0, SKIP 0, real repo unchanged, exit 0:
+  the first green run against the-full-stack. Every attack the Saboteur
+  knows is caught and named by a live tool.
+
+### Bad
+- A green run means every known attack is caught, not that the stack is
+  safe. The run is only as wide as `threats_v2/`.
+
+### Ugly
+- Retired threats still fail (03 FAIL; 05, 09, 11, 12 UGLY), by design:
+  `sign.py`, `ledger.py` and `hal_v2.py` keep their gaps. Anyone calling
+  those originals directly gets the old behaviour; the layers are the
+  tools to call.
+
 ## [v0.3.2-dev] — 2026-11-15 — threats 18–20: pinned hashes, governance-v7
 
 ### Good

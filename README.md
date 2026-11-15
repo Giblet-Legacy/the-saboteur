@@ -73,3 +73,6 @@ threat passed; 1: a FAIL, UGLY or SKIP; 2: the harness is invalid.
 Threats are in `threats_v2/` (SPEC_V2.md §5).
 
 Status: 0.3.0-dev (VERSION). First honest run: PASS 7, FAIL 1, UGLY 4.
+
+Retired threats (old-tool gaps, kept as evidence) are in
+`threats_v2/retired/` (2026-11-15); the main run no longer loads them.
