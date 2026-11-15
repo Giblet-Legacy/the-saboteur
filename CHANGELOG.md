@@ -1,3 +1,21 @@
+## [v1.0.0] — 12/12 PASS
+
+### Good
+- All 12 threats pass cleanly.
+- 0 FAIL. 0 UGLY.
+- Two real silent passes found and fixed by layering:
+  - `freeze.py --check` didn't exist (fixed by `freeze_v2.py`).
+  - `hal.py seal` printed FAILED but exited 0 (fixed by `hal_v2.py`).
+
+### Bad
+- The Saboteur depends on specific paths and commands in the target repo.
+  If the target repo restructures, threat specs must be updated.
+
+### Ugly
+- The first run had a false positive (the `ledger.py` silent pass) because
+  the harness ran the tool from the wrong directory. The Saboteur is only
+  as honest as its own test harness.
+
 # CHANGELOG — the-saboteur (Tier 2: The Saboteur)
 
 CHANGELOG.md — build history for The Saboteur, latest entry at top.
