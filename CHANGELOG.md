@@ -4,17 +4,34 @@ CHANGELOG.md — build history for The Saboteur, latest entry at top.
 (The v1.0.0 entry below sits above the original title; it is kept as
 written. Entries from here on go at the top.)
 
+## [v0.4.0] — 2026-11-18 — frozen
+
+### Good
+- Frozen (James: "freeze"). VERSION 0.3.3 -> 0.4.0. 18/18 on the laptop
+  and on the VPS check.
+- Named for the version it ships (roadmap NAMING.md): built as
+  saboteur_v3.py / SPEC_V3.md / tests/test_saboteur_v3.py / threats_v3/,
+  renamed before the freeze to saboteur_v0_4.py / SPEC_V0_4.md /
+  tests/test_saboteur_v0_4.py / threats_v0_4/. The entry below uses the
+  new names. The frozen v1 and v2 files keep theirs.
+
+### Bad
+- `threats_v0_4/` is still empty: nothing attacks the Legacy layers yet.
+
+### Ugly
+- No ugly items.
+
 ## [v0.4.0-dev] — 2026-11-18 — no default target; the-full-stack refused
 
 ### Good
 - James: "the forge stack was for reference only and not meant to be a
-  layer involved in the legacy program." `saboteur_v3.py` (SPEC_V3.md)
+  layer involved in the legacy program." `saboteur_v0_4.py` (SPEC_V0_4.md)
   is v2's harness unchanged, with `--target` required, a `the-full-stack`
   target refused (exit 2, nothing made) and threats read from
-  `threats_v3/`. `tests/test_saboteur_v3.py` (5, run red first). 18/18.
+  `threats_v0_4/`. `tests/test_saboteur_v0_4.py` (5, run red first). 18/18.
 
 ### Bad
-- `threats_v3/` is empty, so the Saboteur proves nothing about the
+- `threats_v0_4/` is empty, so the Saboteur proves nothing about the
   Legacy yet. Threats against P2 Sign, P3 Freeze, P4 Ledger and P15 HAL
   are the next piece of work, when James says.
 - The VPS check still runs `saboteur_v2.py` against the-full-stack until

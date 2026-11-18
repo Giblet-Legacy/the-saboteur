@@ -29,10 +29,10 @@ S24/Termux and laptop/VS Code. State is confirmed, never assumed. LF-only.
 British English (-ise, artefact). Good/Bad/Ugly CHANGELOG, latest at top.
 Header discipline on every file and function.
 
-## v3 (2026-11-18)
+## 0.4.0 (2026-11-18)
 the-full-stack is reference only, never a target or a layer (James,
-2026-11-18). Run `python saboteur_v3.py --target DIR` (SPEC_V3.md): no
-default target, the-full-stack refused, threats in `threats_v3/`
+2026-11-18). Run `python saboteur_v0_4.py --target DIR` (SPEC_V0_4.md): no
+default target, the-full-stack refused, threats in `threats_v0_4/`
 (written against the Legacy's own layers). v2 and threats_v2/ are
 history, never edited.
 
