@@ -50,6 +50,18 @@ production.
 ## Win condition
 Find at least one real silent pass in the current tools.
 
+## v3: no default target (2026-11-18)
+
+James: "the forge stack was for reference only and not meant to be a
+layer involved in the legacy program." `saboteur_v3.py` (SPEC_V3.md) is
+v2's harness with `--target` required and the-full-stack refused:
+
+    python saboteur_v3.py --target ../ledger-layer     # threats from threats_v3/
+
+`threats_v3/` is empty until threats are written against the Legacy's
+own layers. The v2 section below is history: its 15 threats ran
+the-full-stack's tools.
+
 ## v2: the honest harness (2026-11-15)
 
 v1 (`saboteur.py`) is kept as it was, but its "12/12 PASS" is withdrawn

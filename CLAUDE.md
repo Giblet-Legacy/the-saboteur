@@ -29,6 +29,13 @@ S24/Termux and laptop/VS Code. State is confirmed, never assumed. LF-only.
 British English (-ise, artefact). Good/Bad/Ugly CHANGELOG, latest at top.
 Header discipline on every file and function.
 
+## v3 (2026-11-18)
+the-full-stack is reference only, never a target or a layer (James,
+2026-11-18). Run `python saboteur_v3.py --target DIR` (SPEC_V3.md): no
+default target, the-full-stack refused, threats in `threats_v3/`
+(written against the Legacy's own layers). v2 and threats_v2/ are
+history, never edited.
+
 ## v2 (2026-11-15)
 `saboteur_v2.py`, `harness_guard_v2.py`, `mutations_v2.py` and
 `threats_v2/` (SPEC_V2.md) are the layer over v1, which is never edited.

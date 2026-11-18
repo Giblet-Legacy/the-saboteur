@@ -4,6 +4,26 @@ CHANGELOG.md — build history for The Saboteur, latest entry at top.
 (The v1.0.0 entry below sits above the original title; it is kept as
 written. Entries from here on go at the top.)
 
+## [v0.4.0-dev] — 2026-11-18 — no default target; the-full-stack refused
+
+### Good
+- James: "the forge stack was for reference only and not meant to be a
+  layer involved in the legacy program." `saboteur_v3.py` (SPEC_V3.md)
+  is v2's harness unchanged, with `--target` required, a `the-full-stack`
+  target refused (exit 2, nothing made) and threats read from
+  `threats_v3/`. `tests/test_saboteur_v3.py` (5, run red first). 18/18.
+
+### Bad
+- `threats_v3/` is empty, so the Saboteur proves nothing about the
+  Legacy yet. Threats against P2 Sign, P3 Freeze, P4 Ledger and P15 HAL
+  are the next piece of work, when James says.
+- The VPS check still runs `saboteur_v2.py` against the-full-stack until
+  it is changed (roadmap step 6).
+
+### Ugly
+- Every PASS the Saboteur has recorded so far was against the-full-stack,
+  not a Legacy layer.
+
 ## [v0.3.3] — 2026-11-15 — frozen
 
 ### Good
