@@ -1,0 +1,11 @@
+{
+  "name": "Append a junk row (store_v2_1)",
+  "target_file": "store.db",
+  "mutation": "sqlite:INSERT INTO ledger VALUES (4,'x','{}','x','x','x')",
+  "tool": "python legacy_check_v0_5.py --layer store_v2_1",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed store.db: store_v2_1.verify_store"
+  ],
+  "notes": "A row that is nothing at all."
+}

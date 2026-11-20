@@ -1,0 +1,11 @@
+{
+  "name": "Turn a FACT into an OPINION (ledger_v2)",
+  "target_file": "ledger.jsonl",
+  "mutation": "line_set:1:record={\"kind\":\"claim\",\"n\":1,\"subject\":\"the forge\",\"object\":\"is in Wales\",\"face\":\"OPINION\"}",
+  "tool": "python legacy_check_v0_5.py --layer ledger_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed ledger.jsonl: ledger_v2.verify_ledger"
+  ],
+  "notes": "The face of a claim is signed."
+}

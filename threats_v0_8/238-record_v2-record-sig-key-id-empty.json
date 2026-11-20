@@ -1,0 +1,11 @@
+{
+  "name": "Make the record's signature key_id an empty string (record_v2)",
+  "target_file": "records/note-morning.sc.json",
+  "mutation": "json_set:signature.key_id=\"\"",
+  "tool": "python legacy_check_v0_5.py --layer record_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed records/note-morning.sc.json: record_v2.verify_record_file"
+  ],
+  "notes": "Type confusion: the layer must say no, never raise. key_id becomes an empty string."
+}

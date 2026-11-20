@@ -1,0 +1,11 @@
+{
+  "name": "Spell the algorithm in lower case (sign_v2)",
+  "target_file": "capsules/claim-forge.sc.json",
+  "mutation": "json_set:signature.algorithm=\"ed25519\"",
+  "tool": "python legacy_check_v0_5.py --layer sign_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed capsules/claim-forge.sc.json: sign_v2.verify_capsule"
+  ],
+  "notes": "Strict shape: Ed25519 exactly."
+}

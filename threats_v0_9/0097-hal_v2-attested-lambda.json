@@ -1,0 +1,11 @@
+{
+  "name": "Change the attested lambda (hal_v2)",
+  "target_file": "seals/seal-approve.json",
+  "mutation": "json_set:lambda_attestation.lambda=0.99",
+  "tool": "python legacy_check_v0_5.py --layer hal_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed seals/seal-approve.json: hal_v2.verify_seal"
+  ],
+  "notes": "The attester signed 0.82."
+}

@@ -58,6 +58,35 @@ v2's harness with `--target` required and the-full-stack refused:
 
     python saboteur_v0_4.py --target ../ledger-layer     # threats from threats_v0_4/
 
+## 0.9.0: 1000 threats, the known gaps mapped (2026-11-20)
+
+    python saboteur_v0_9.py                 # 1000 threats, inside the run lock
+    python saboteur_v0_9.py --only 08       # 0800–0899
+
+0.8.0 added substitution: a valid signed file copied over another
+(SPEC_V0_8.md). 0.9.0's 200 new threats map every known gap class
+(SPEC_V0_9.md §4): 154 threats are red. Next is the 1.0.0
+consolidation (CONSOLIDATION_V1.md), then rotation in 1.1.0.
+
+## 0.7.0-dev: 400 threats (2026-11-20)
+
+    python saboteur_v0_7.py                 # 400 threats, inside the run lock
+    python saboteur_v0_7.py --only 2        # 200–299
+
+`threats_v0_7/` is the 200 threats of 0.6.0 plus 200 new ones, mostly
+type confusion. No layer raised on any of them. Three new gaps:
+substrate's unsigned `created_at` (324, 325) and a record whose lines
+were swapped (383, meaning unchanged). See SPEC_V0_7.md §3.
+
+## 0.6.0-dev: 200 threats (2026-11-20)
+
+    python saboteur_v0_6.py                 # 200 threats, inside the run lock
+    python saboteur_v0_6.py --only 1        # 100–199
+
+`threats_v0_6/` is the 108 threats of 0.5.0 plus 92 new ones, against
+the same fixture. First run: PASS 191, FAIL 9. The ninth gap is new: the
+store accepts a stored record with a trailing space (SPEC_V0_6.md §3).
+
 ## 0.5.1 (frozen 2026-11-20): one run at a time
 
     python saboteur_v0_5_1.py               # 0.5.0's run, inside a lock

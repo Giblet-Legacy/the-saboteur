@@ -1,0 +1,11 @@
+{
+  "name": "Copy row 0's record into row 3 (store_v2_1)",
+  "target_file": "store.db",
+  "mutation": "sqlite:UPDATE ledger SET record=(SELECT record FROM ledger WHERE seq=0) WHERE seq=3",
+  "tool": "python legacy_check_v0_5.py --layer store_v2_1",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed store.db: store_v2_1.verify_store"
+  ],
+  "notes": "A replayed record under row 3's hash."
+}

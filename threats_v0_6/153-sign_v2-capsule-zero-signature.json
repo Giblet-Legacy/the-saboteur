@@ -1,0 +1,11 @@
+{
+  "name": "Zero a capsule's signature value (sign_v2)",
+  "target_file": "capsules/claim-forge.sc.json",
+  "mutation": "json_set:signature.value=\"00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\"",
+  "tool": "python legacy_check_v0_5.py --layer sign_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed capsules/claim-forge.sc.json: sign_v2.verify_capsule"
+  ],
+  "notes": "Right length, not a signature."
+}

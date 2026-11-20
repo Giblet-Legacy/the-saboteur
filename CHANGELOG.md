@@ -4,6 +4,121 @@ CHANGELOG.md — build history for The Saboteur, latest entry at top.
 (The v1.0.0 entry below sits above the original title; it is kept as
 written. Entries from here on go at the top.)
 
+## [v0.9.0-dev] — 2026-11-20 — 1000 threats, the known gaps mapped
+
+### Good
+- James: "fill the known gaps to add 200 more to bring us to 1000".
+  `saboteur_v0_9.py` (SPEC_V0_9.md) defaults to `threats_v0_9/`:
+  - 0001–0800 are 0.8.0's with the same bytes, renumbered to four
+    digits;
+  - 0801–1000 map each known gap class in full, and each names its gap.
+- `mutations_v0_9.py` adds `keep_first_lines:N` (rollback depth) and
+  `json_reformat:<style>` (the same content in other bytes). Both
+  refuse a no-op.
+- Run of 0801–1000: PASS 70, FAIL 130, UGLY 0, SKIP 0.
+- Tests: `tests/test_saboteur_v0_9.py` (12).
+
+### Bad
+- The gap classes are red across the board (SPEC_V0_9 §4):
+  - rollback at every depth;
+  - duplicate keys everywhere except the ledger and substrate capsules;
+  - every unsigned substrate column, and memberships are never read;
+  - any re-formatting of a record or stored record;
+  - sign_v2 capsules and record_v2 accepting any owner-signed file in
+    place of another;
+  - the store copied over the substrate reading as an empty substrate.
+- 154 threats are red in all.
+- `CONSOLIDATION_V1.md` is the plan for 1.0.0 (James: "yes 7").
+
+### Ugly
+- While this was being built, `saboteur_v2.py` was renamed to
+  `saboteur_v0_2.py` outside the AI's session, with the deletion
+  staged. It broke every runner. It was put back (James's yes to
+  CONSOLIDATION_V1 §7.3), and the identical copy was removed.
+
+## [v0.8.0-dev] — 2026-11-20 — 800 threats and substitution
+
+### Good
+- James: "400 more". `saboteur_v0_8.py` (SPEC_V0_8.md) defaults to
+  `threats_v0_8/`: 0.7.0's 400 plus 400 new.
+  - Substitution: a valid signed file copied over another.
+  - Signature type confusion on the files 0.7.0 left alone.
+  - A field matrix: every signed field set to null, 0, [], {}, "" and
+    true.
+- `mutations_v0_8.py` adds `copy_sibling` and `text_replace`.
+- Run of 401–800: PASS 388, FAIL 12, UGLY 0, SKIP 0. No layer raised
+  on any of the 382 type-confusion threats.
+- Tests: `tests/test_saboteur_v0_8.py` (12).
+
+### Bad
+- **A new gap class, substitution** (401–410, 413, 414). Nothing binds a
+  signed file to its name, place or kind. The refusal seal copied over
+  the approval verifies (403, 404).
+- 0.6.0–0.8.0's tests passed `--parent x`, so the lock made an empty
+  `x/` in the working folder. The tests now use tmp_path, and the folder
+  was removed.
+
+### Ugly
+- No ugly items.
+
+## [v0.7.0-dev] — 2026-11-20 — 400 threats
+
+### Good
+- James: "200 more" (attacks). `saboteur_v0_7.py` (SPEC_V0_7.md) is
+  0.6.0's run, defaulting to `threats_v0_7/`.
+  - That folder holds the 200 threats of 0.6.0 byte for byte, plus 200
+    new ones (201–400). They are data only.
+  - Most of the new ones are type confusion: a number, list, object,
+    null or empty string where a layer expects something else.
+- No layer raised. Every type-confusion threat was refused cleanly.
+- Full run of 400: PASS 388, FAIL 12 (the known gaps), UGLY 0, SKIP 0.
+- Tests: `tests/test_saboteur_v0_7.py` (6), including that no two
+  threats are the same attack.
+
+### Bad
+- Three new gaps, logged red first (SPEC_V0_7 §3):
+  - **324, 325:** substrate_v4's `created_at` is outside the signed
+    capsule, so backdating it goes unnoticed. Same class as `name_key`
+    (108).
+  - **383:** record_v2 accepts a record file with two key lines
+    swapped. The meaning is unchanged, but the bytes are not the ones
+    written. Same class as 140 in the store. Low severity.
+- The 9 gaps from 0.6.0 stand.
+- The tests were written after the threats.
+
+### Ugly
+- No ugly items.
+
+## [v0.6.0-dev] — 2026-11-20 — 200 threats
+
+### Good
+- James: "200 tests for saboteur". `saboteur_v0_6.py` (SPEC_V0_6.md)
+  is 0.5.1's run, with the lock, defaulting to `threats_v0_6/`.
+  - That folder holds the 108 threats of 0.5.0 byte for byte, plus 92
+    new ones (109–200).
+  - The new threats are data only, with no new mutation code.
+  - They reach the files 0.5.0 never attacked: the glossary and its
+    sidecar, spec-ledger, note-boot and seal-refuse. They also reach
+    fields 0.5.0 left alone.
+- First run: PASS 191, FAIL 9, UGLY 0, SKIP 0, real repo unchanged.
+- Tests: `tests/test_saboteur_v0_6.py` (6). With the frozen suites,
+  46/46.
+
+### Bad
+- One new gap, logged red first (SPEC_V0_6 §3): store_v2_1 accepts a
+  stored record with a trailing space (140). store_v2 parses the record
+  column and rebuilds the canonical bytes, so the bytes on disk are not
+  the signed bytes. The meaning cannot change this way. The P4 ledger
+  file refuses the same thing (013). A fix is a new layer in
+  store-layer, when James decides.
+- The 8 gaps from 0.5.0 stand.
+- Three first-draft threats could not apply (`flip_letter` only flips
+  inside JSON strings). They were replaced, and SPEC_V0_6 §2 says why.
+- The tests were written after the threats.
+
+### Ugly
+- No ugly items.
+
 ## [v0.5.1] — 2026-11-20 — frozen
 
 ### Good

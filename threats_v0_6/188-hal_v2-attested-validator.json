@@ -1,0 +1,11 @@
+{
+  "name": "Name another validator in the attestation (hal_v2)",
+  "target_file": "seals/seal-approve.json",
+  "mutation": "json_set:lambda_attestation.validator_key_id=\"did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK\"",
+  "tool": "python legacy_check_v0_5.py --layer hal_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed seals/seal-approve.json: hal_v2.verify_seal"
+  ],
+  "notes": "The attestation was for the owner."
+}

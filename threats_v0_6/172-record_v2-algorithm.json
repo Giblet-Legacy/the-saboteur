@@ -1,0 +1,11 @@
+{
+  "name": "Claim another algorithm on a record (record_v2)",
+  "target_file": "records/note-morning.sc.json",
+  "mutation": "json_set:signature.algorithm=\"RS256\"",
+  "tool": "python legacy_check_v0_5.py --layer record_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed records/note-morning.sc.json: record_v2.verify_record_file"
+  ],
+  "notes": "Only Ed25519."
+}

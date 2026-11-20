@@ -1,0 +1,12 @@
+{
+  "name": "Trailing space in note-morning (record_v2)",
+  "target_file": "records/note-morning.sc.json",
+  "mutation": "trailing_space",
+  "tool": "python legacy_check_v0_5.py --layer record_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed records/note-morning.sc.json: record_v2.verify_record_file"
+  ],
+  "notes": "Whitespace: same content, other bytes. Gap class 6.",
+  "gap": "non-canonical"
+}

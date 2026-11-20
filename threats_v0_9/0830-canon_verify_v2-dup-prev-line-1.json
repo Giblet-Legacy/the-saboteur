@@ -1,0 +1,12 @@
+{
+  "name": "Hide a duplicate prev key in row 1 (canon_verify_v2)",
+  "target_file": "ledger.jsonl",
+  "mutation": "line_dup_key:1:prev=\"0000000000000000000000000000000000000000000000000000000000000000\"",
+  "tool": "python legacy_check_v0_5.py --layer canon_verify_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed ledger.jsonl: canon_verify_v2.verify_ledger"
+  ],
+  "notes": "A first-wins parser sees the Saboteur's value.",
+  "gap": "dup-key"
+}

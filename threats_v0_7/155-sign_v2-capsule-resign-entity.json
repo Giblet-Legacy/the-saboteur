@@ -1,0 +1,11 @@
+{
+  "name": "Re-sign an entity with another key (sign_v2)",
+  "target_file": "capsules/entity-james.sc.json",
+  "mutation": "resign_attacker",
+  "tool": "python legacy_check_v0_5.py --layer sign_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed capsules/entity-james.sc.json: sign_v2.verify_capsule"
+  ],
+  "notes": "A perfect signature by the wrong key."
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Delete the last entry (roll the ledger back) (ledger_v2)",
+  "target_file": "ledger.jsonl",
+  "mutation": "drop_last_line",
+  "tool": "python legacy_check_v0_5.py --layer ledger_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed ledger.jsonl: ledger_v2.verify_ledger"
+  ],
+  "notes": "Every remaining row is valid: a chain alone has no tail anchor. Expected red until something remembers the head."
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Hide a nested duplicate key in seal-approve (hal_v2)",
+  "target_file": "seals/seal-approve.json",
+  "mutation": "text_replace:\"lambda\": 0.82=>\"lambda\": 0.99, \"lambda\": 0.82",
+  "tool": "python legacy_check_v0_5.py --layer hal_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed seals/seal-approve.json: hal_v2.verify_seal"
+  ],
+  "notes": "A duplicate inside a nested object. Gap class 2: expected red.",
+  "gap": "dup-key"
+}

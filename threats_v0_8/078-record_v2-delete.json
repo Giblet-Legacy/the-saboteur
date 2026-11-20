@@ -1,0 +1,11 @@
+{
+  "name": "Delete a record (record_v2)",
+  "target_file": "records/note-morning.sc.json",
+  "mutation": "delete",
+  "tool": "python legacy_check_v0_5.py",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed records/note-morning.sc.json: manifest.files missing"
+  ],
+  "notes": "Caught by the manifest, not the layer."
+}

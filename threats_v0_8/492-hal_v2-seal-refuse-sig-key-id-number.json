@@ -1,0 +1,11 @@
+{
+  "name": "Set seal-refuse's signature key_id to 123 (hal_v2)",
+  "target_file": "seals/seal-refuse.json",
+  "mutation": "json_set:signature.key_id=123",
+  "tool": "python legacy_check_v0_5.py --layer hal_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed seals/seal-refuse.json: hal_v2.verify_seal"
+  ],
+  "notes": "Type confusion on the signature: the layer must say no, never raise."
+}

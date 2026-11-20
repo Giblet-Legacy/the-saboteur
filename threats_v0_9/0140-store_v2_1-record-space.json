@@ -1,0 +1,11 @@
+{
+  "name": "Add a space to a stored record (store_v2_1)",
+  "target_file": "store.db",
+  "mutation": "sqlite:UPDATE ledger SET record=record||' ' WHERE seq=2",
+  "tool": "python legacy_check_v0_5.py --layer store_v2_1",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed store.db: store_v2_1.verify_store"
+  ],
+  "notes": "One byte outside the JSON."
+}

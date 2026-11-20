@@ -1,0 +1,11 @@
+{
+  "name": "Make the capsule's whole signature a list (sign_v2)",
+  "target_file": "capsules/claim-forge.sc.json",
+  "mutation": "json_set:signature=[]",
+  "tool": "python legacy_check_v0_5.py --layer sign_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed capsules/claim-forge.sc.json: sign_v2.verify_capsule"
+  ],
+  "notes": "Type confusion: signature is an object."
+}

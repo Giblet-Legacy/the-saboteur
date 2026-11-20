@@ -1,0 +1,11 @@
+{
+  "name": "Add an unsigned field to a capsule (sign_v2)",
+  "target_file": "capsules/claim-forge.sc.json",
+  "mutation": "json_set:note=\"added later\"",
+  "tool": "python legacy_check_v0_5.py --layer sign_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed capsules/claim-forge.sc.json: sign_v2.verify_capsule"
+  ],
+  "notes": "Every field is under the signature."
+}

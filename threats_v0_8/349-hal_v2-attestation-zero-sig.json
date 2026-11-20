@@ -1,0 +1,11 @@
+{
+  "name": "Zero the attestation's signature (hal_v2)",
+  "target_file": "seals/seal-approve.json",
+  "mutation": "json_set:lambda_attestation.signature.value=\"00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\"",
+  "tool": "python legacy_check_v0_5.py --layer hal_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed seals/seal-approve.json: hal_v2.verify_seal"
+  ],
+  "notes": "Right length, not a signature."
+}

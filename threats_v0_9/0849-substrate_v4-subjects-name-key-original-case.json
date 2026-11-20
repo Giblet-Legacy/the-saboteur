@@ -1,0 +1,12 @@
+{
+  "name": "Set a subject row's name_key in its display case (substrate_v4)",
+  "target_file": "substrate.db",
+  "mutation": "sqlite:UPDATE subjects SET name_key='The Legacy' WHERE name_key='the legacy'",
+  "tool": "python legacy_check_v0_5.py --layer substrate_v4",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed substrate.db: substrate_v4.list_subjects"
+  ],
+  "notes": "name_key is outside the signed capsule. Gap class 5 (108): expected red.",
+  "gap": "unsigned-column"
+}

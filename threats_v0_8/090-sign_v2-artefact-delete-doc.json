@@ -1,0 +1,11 @@
+{
+  "name": "Delete a signed document (sign_v2)",
+  "target_file": "docs/charter.md",
+  "mutation": "delete",
+  "tool": "python legacy_check_v0_5.py",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed docs/charter.md: manifest.files missing"
+  ],
+  "notes": "Caught by the manifest, not the layer."
+}

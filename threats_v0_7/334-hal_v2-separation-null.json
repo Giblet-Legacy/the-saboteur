@@ -1,0 +1,11 @@
+{
+  "name": "Make the separation null (hal_v2)",
+  "target_file": "seals/seal-approve.json",
+  "mutation": "json_set:separation=null",
+  "tool": "python legacy_check_v0_5.py --layer hal_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed seals/seal-approve.json: hal_v2.verify_seal"
+  ],
+  "notes": "Type confusion."
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Hide a duplicate object inside a ledger record (ledger_v2)",
+  "target_file": "ledger.jsonl",
+  "mutation": "text_replace:\"object\":\"attacks a copy\"=>\"object\":\"forged\",\"object\":\"attacks a copy\"",
+  "tool": "python legacy_check_v0_5.py --layer ledger_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed ledger.jsonl: ledger_v2.verify_ledger"
+  ],
+  "notes": "A nested duplicate key in a ledger row.",
+  "gap": "dup-key"
+}

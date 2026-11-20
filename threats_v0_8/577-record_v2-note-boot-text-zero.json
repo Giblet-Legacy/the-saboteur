@@ -1,0 +1,11 @@
+{
+  "name": "Set note-boot's text to 0 (record_v2)",
+  "target_file": "records/note-boot.sc.json",
+  "mutation": "json_set:text=0",
+  "tool": "python legacy_check_v0_5.py --layer record_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed records/note-boot.sc.json: record_v2.verify_record_file"
+  ],
+  "notes": "Type confusion on a signed field: the layer must say no, never raise."
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Rewrite the last entry, keep the owner's did (genesis_v3)",
+  "target_file": "ledger.jsonl",
+  "mutation": "ledger_rewrite_last_keep_signer",
+  "tool": "python legacy_check_v0_5.py --layer genesis_v3",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed ledger.jsonl: genesis_v3.verify_genesis"
+  ],
+  "notes": "Re-hashed and re-signed by an attacker who claims to be the owner."
+}

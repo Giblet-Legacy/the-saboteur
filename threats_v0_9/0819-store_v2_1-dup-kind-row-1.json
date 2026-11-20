@@ -1,0 +1,12 @@
+{
+  "name": "Hide a duplicate kind key in stored row 1 (store_v2_1)",
+  "target_file": "store.db",
+  "mutation": "sqlite:UPDATE ledger SET record='{' || '\"kind\":\"forged\",' || substr(record,2) WHERE seq=1",
+  "tool": "python legacy_check_v0_5.py --layer store_v2_1",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed store.db: store_v2_1.verify_store"
+  ],
+  "notes": "A duplicate key placed first: json.loads keeps the last, signed value. A first-wins reader sees the forged one.",
+  "gap": "dup-key"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Make the seal's signature key_id a did:key that does not decode (hal_v2)",
+  "target_file": "seals/seal-approve.json",
+  "mutation": "json_set:signature.key_id=\"did:key:zNOTAKEY\"",
+  "tool": "python legacy_check_v0_5.py --layer hal_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed seals/seal-approve.json: hal_v2.verify_seal"
+  ],
+  "notes": "Type confusion: the layer must say no, never raise. key_id becomes a did:key that does not decode."
+}

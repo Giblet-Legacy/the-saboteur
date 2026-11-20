@@ -1,0 +1,12 @@
+{
+  "name": "Give one entity the other's name_key (substrate_v4)",
+  "target_file": "substrate.db",
+  "mutation": "sqlite:UPDATE entities SET name_key='james gilbert 2' WHERE name_key='james gilbert'",
+  "tool": "python legacy_check_v0_5.py --layer substrate_v4",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed substrate.db: substrate_v4.list_entities"
+  ],
+  "notes": "A lookup by name finds nothing, or the wrong row: expected red.",
+  "gap": "unsigned-column"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Insert a row reusing row 1's hash (store_v2_1)",
+  "target_file": "store.db",
+  "mutation": "sqlite:INSERT INTO ledger SELECT 4, (SELECT hash FROM ledger WHERE seq=3), record, signer, hash, signature FROM ledger WHERE seq=1",
+  "tool": "python legacy_check_v0_5.py --layer store_v2_1",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed store.db: store_v2_1.verify_store"
+  ],
+  "notes": "Chained to row 3 but carrying row 1's hash."
+}

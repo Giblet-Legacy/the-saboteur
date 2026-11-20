@@ -1,0 +1,12 @@
+{
+  "name": "Hide a nested duplicate key in policy-writes (sign_v2)",
+  "target_file": "capsules/policy-writes.sc.json",
+  "mutation": "text_replace:\"sensitivity\": \"0.6\"=>\"sensitivity\": \"0.9\", \"sensitivity\": \"0.6\"",
+  "tool": "python legacy_check_v0_5.py --layer sign_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed capsules/policy-writes.sc.json: sign_v2.verify_capsule"
+  ],
+  "notes": "A duplicate inside a nested object. Gap class 2: expected red.",
+  "gap": "dup-key"
+}

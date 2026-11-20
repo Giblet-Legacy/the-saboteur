@@ -1,0 +1,11 @@
+{
+  "name": "Rewrite every line ending as CRLF (ledger_v2)",
+  "target_file": "ledger.jsonl",
+  "mutation": "lf_to_crlf",
+  "tool": "python legacy_check_v0_5.py --layer ledger_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed ledger.jsonl: ledger_v2.verify_ledger"
+  ],
+  "notes": "P4 v2 section 2: LF only."
+}

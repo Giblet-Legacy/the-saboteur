@@ -1,0 +1,11 @@
+{
+  "name": "Replace the glossary with the charter (sign_v2)",
+  "target_file": "docs/glossary.md",
+  "mutation": "copy_sibling:charter.md",
+  "tool": "python legacy_check_v0_5.py --layer sign_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed docs/glossary.md: sign_v2.verify_artifact"
+  ],
+  "notes": "Substitution. The glossary's sidecar does not match."
+}

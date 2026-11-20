@@ -1,0 +1,11 @@
+{
+  "name": "Upper-case a subject's id (substrate_v4)",
+  "target_file": "substrate.db",
+  "mutation": "sqlite:UPDATE subjects SET subject_id=upper(subject_id)",
+  "tool": "python legacy_check_v0_5.py --layer substrate_v4",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed substrate.db: substrate_v4.list_subjects"
+  ],
+  "notes": "Lowercase hex only; the id is the hash."
+}

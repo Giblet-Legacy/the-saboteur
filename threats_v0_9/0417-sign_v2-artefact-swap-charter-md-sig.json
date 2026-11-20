@@ -1,0 +1,11 @@
+{
+  "name": "Replace the charter's sidecar with the glossary's (sign_v2)",
+  "target_file": "docs/charter.md.sig",
+  "mutation": "copy_sibling:glossary.md.sig",
+  "tool": "python legacy_check_v0_5.py --layer sign_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed docs/charter.md: sign_v2.verify_artifact"
+  ],
+  "notes": "Substitution. A valid sidecar for another file."
+}

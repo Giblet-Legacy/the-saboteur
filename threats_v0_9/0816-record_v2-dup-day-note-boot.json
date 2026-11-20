@@ -1,0 +1,12 @@
+{
+  "name": "Hide a duplicate day key in note-boot (record_v2)",
+  "target_file": "records/note-boot.sc.json",
+  "mutation": "json_dup_key_first:day=\"2020-01-01\"",
+  "tool": "python legacy_check_v0_5.py --layer record_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed records/note-boot.sc.json: record_v2.verify_record_file"
+  ],
+  "notes": "A first-wins reader sees the Saboteur's value. Gap class 2 (073): expected red.",
+  "gap": "dup-key"
+}

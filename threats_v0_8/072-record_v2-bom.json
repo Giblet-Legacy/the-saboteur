@@ -1,0 +1,11 @@
+{
+  "name": "Put a byte-order mark on a record (record_v2)",
+  "target_file": "records/note-morning.sc.json",
+  "mutation": "add_bom",
+  "tool": "python legacy_check_v0_5.py --layer record_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed records/note-morning.sc.json: record_v2.verify_record_file"
+  ],
+  "notes": "record_v2 reads UTF-8 without a BOM."
+}

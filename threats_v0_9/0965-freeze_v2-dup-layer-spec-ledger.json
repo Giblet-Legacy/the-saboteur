@@ -1,0 +1,12 @@
+{
+  "name": "Hide a duplicate layer key in spec-ledger (freeze_v2)",
+  "target_file": "frozen/spec-ledger.sc.json",
+  "mutation": "json_dup_key_first:layer=\"P9\"",
+  "tool": "python legacy_check_v0_5.py --layer freeze_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed frozen/spec-ledger.sc.json: freeze_v2.verify_frozen_capsule"
+  ],
+  "notes": "The layer is handed a parsed dict, so the duplicate is resolved (last wins, the signed value) before it is asked. Every reader that parses the file differently sees the Saboteur's value. Gap class 2: expected red.",
+  "gap": "dup-key"
+}

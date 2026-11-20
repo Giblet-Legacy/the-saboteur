@@ -1,0 +1,12 @@
+{
+  "name": "Hide a duplicate signature key in note-morning (record_v2)",
+  "target_file": "records/note-morning.sc.json",
+  "mutation": "json_dup_key_first:signature={\"algorithm\":\"Ed25519\",\"key_id\":\"x\",\"value\":\"00\"}",
+  "tool": "python legacy_check_v0_5.py --layer record_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed records/note-morning.sc.json: record_v2.verify_record_file"
+  ],
+  "notes": "A first-wins reader sees the Saboteur's value. Gap class 2 (073): expected red.",
+  "gap": "dup-key"
+}

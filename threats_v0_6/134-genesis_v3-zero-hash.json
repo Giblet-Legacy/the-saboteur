@@ -1,0 +1,11 @@
+{
+  "name": "Zero the genesis hash (genesis_v3)",
+  "target_file": "ledger.jsonl",
+  "mutation": "line_set:0:hash=\"0000000000000000000000000000000000000000000000000000000000000000\"",
+  "tool": "python legacy_check_v0_5.py --layer genesis_v3",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed ledger.jsonl: genesis_v3.verify_genesis"
+  ],
+  "notes": "The stored hash no longer matches."
+}

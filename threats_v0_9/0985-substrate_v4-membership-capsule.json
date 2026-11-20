@@ -1,0 +1,12 @@
+{
+  "name": "Tamper with a membership's capsule (substrate_v4)",
+  "target_file": "substrate.db",
+  "mutation": "sqlite:UPDATE memberships SET capsule=replace(capsule,'membership','forgery')",
+  "tool": "python legacy_check_v0_5.py --layer substrate_v4",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed substrate.db: substrate_v4.list_subjects"
+  ],
+  "notes": "Memberships: list_entities and list_subjects do not read them. Whatever reads them must verify. Expected red.",
+  "gap": "unsigned-column"
+}

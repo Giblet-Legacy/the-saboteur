@@ -1,0 +1,11 @@
+{
+  "name": "Point a middle row's prev at the zero anchor (store_v2_1)",
+  "target_file": "store.db",
+  "mutation": "sqlite:UPDATE ledger SET prev='0000000000000000000000000000000000000000000000000000000000000000' WHERE seq=2",
+  "tool": "python legacy_check_v0_5.py --layer store_v2_1",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed store.db: store_v2_1.verify_store"
+  ],
+  "notes": "A second genesis inside the store."
+}

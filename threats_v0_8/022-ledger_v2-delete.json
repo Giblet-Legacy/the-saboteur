@@ -1,0 +1,11 @@
+{
+  "name": "Delete the ledger (ledger_v2)",
+  "target_file": "ledger.jsonl",
+  "mutation": "delete",
+  "tool": "python legacy_check_v0_5.py",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed ledger.jsonl: manifest.files missing"
+  ],
+  "notes": "No ledger at all. Caught by the manifest, not the layer."
+}

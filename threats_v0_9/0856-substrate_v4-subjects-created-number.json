@@ -1,0 +1,12 @@
+{
+  "name": "Set a subject row's created_at to a number (substrate_v4)",
+  "target_file": "substrate.db",
+  "mutation": "sqlite:UPDATE subjects SET created_at=0 WHERE name_key='the legacy'",
+  "tool": "python legacy_check_v0_5.py --layer substrate_v4",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed substrate.db: substrate_v4.list_subjects"
+  ],
+  "notes": "created_at is outside the signed capsule (324, 325): expected red.",
+  "gap": "unsigned-column"
+}
