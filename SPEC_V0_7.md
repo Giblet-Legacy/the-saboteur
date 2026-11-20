@@ -10,7 +10,7 @@ Function:
 
 Tier:      Tier 2 — The Saboteur
 Depends:   saboteur_v0_6.py (and through it 0.5.1, 0.5.0 and v2)
-Version:   SPEC V0.7 0.7.0-dev
+Version:   SPEC V0.7 0.7.0
 Licence:   MSL-1.0
 Author:    James Gilbert (Giblets Forge)
 
@@ -98,5 +98,6 @@ The 12 FAILs are the 8 from SPEC_V0_5 §7, 140 (SPEC_V0_6 §3), and 324,
 
 ## Document control
 
-- **SPEC V0.7 0.7.0-dev**: 2026-11-20, by the VS Code AI on James's
+- **SPEC V0.7 0.7.0**: 2026-11-20, by the VS Code AI on James's
   "200 more".
+- Frozen 2026-11-20 with 0.6.0–0.9.0 together (James: "yes 7", CONSOLIDATION_V1 §7.2).

@@ -17,7 +17,7 @@ Public API:
 Tier:     Tier 2 — The Saboteur, 0.7.0
 Depends:  saboteur_v0_6.py
 Spec:     SPEC_V0_7.md 0.7.0
-Version:  0.7.0-dev
+Version:  0.7.0 (frozen 2026-11-20)
 Licence:  MSL-1.0
 Author:   James Gilbert (Giblets Forge)
 """

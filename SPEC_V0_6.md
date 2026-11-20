@@ -10,7 +10,7 @@ Function:
 
 Tier:      Tier 2 — The Saboteur
 Depends:   saboteur_v0_5_1.py (and through it 0.5.0 and v2, unchanged)
-Version:   SPEC V0.6 0.6.0-dev
+Version:   SPEC V0.6 0.6.0
 Licence:   MSL-1.0
 Author:    James Gilbert (Giblets Forge)
 
@@ -112,5 +112,6 @@ decides.
 
 ## Document control
 
-- **SPEC V0.6 0.6.0-dev**: 2026-11-20, by the VS Code AI on James's
+- **SPEC V0.6 0.6.0**: 2026-11-20, by the VS Code AI on James's
   "200 tests for saboteur".
+- Frozen 2026-11-20 with 0.6.0–0.9.0 together (James: "yes 7", CONSOLIDATION_V1 §7.2).

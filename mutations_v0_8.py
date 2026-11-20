@@ -29,7 +29,7 @@ Internal helpers:
 Tier:     Tier 2 — The Saboteur, 0.8.0
 Depends:  mutations_v0_5.py
 Spec:     SPEC_V0_8.md 0.8.0
-Version:  0.8.0-dev
+Version:  0.8.0 (frozen 2026-11-20)
 Licence:  MSL-1.0
 Author:   James Gilbert (Giblets Forge)
 """

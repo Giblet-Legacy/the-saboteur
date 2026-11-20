@@ -105,3 +105,4 @@ did so because the kinds differ in shape:
 
 - **SPEC V0.8 0.8.0**: 2026-11-20, by the VS Code AI on James's "400
   more".
+- Frozen 2026-11-20 with 0.6.0–0.9.0 together (James: "yes 7", CONSOLIDATION_V1 §7.2).

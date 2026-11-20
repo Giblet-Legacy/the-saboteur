@@ -58,7 +58,7 @@ v2's harness with `--target` required and the-full-stack refused:
 
     python saboteur_v0_4.py --target ../ledger-layer     # threats from threats_v0_4/
 
-## 0.9.0: 1000 threats, the known gaps mapped (2026-11-20)
+## 0.9.0 (frozen 2026-11-20): 1000 threats, the known gaps mapped
 
     python saboteur_v0_9.py                 # 1000 threats, inside the run lock
     python saboteur_v0_9.py --only 08       # 0800–0899
@@ -68,7 +68,7 @@ v2's harness with `--target` required and the-full-stack refused:
 (SPEC_V0_9.md §4): 154 threats are red. Next is the 1.0.0
 consolidation (CONSOLIDATION_V1.md), then rotation in 1.1.0.
 
-## 0.7.0-dev: 400 threats (2026-11-20)
+## 0.7.0 (frozen 2026-11-20): 400 threats
 
     python saboteur_v0_7.py                 # 400 threats, inside the run lock
     python saboteur_v0_7.py --only 2        # 200–299
@@ -78,7 +78,7 @@ type confusion. No layer raised on any of them. Three new gaps:
 substrate's unsigned `created_at` (324, 325) and a record whose lines
 were swapped (383, meaning unchanged). See SPEC_V0_7.md §3.
 
-## 0.6.0-dev: 200 threats (2026-11-20)
+## 0.6.0 (frozen 2026-11-20): 200 threats
 
     python saboteur_v0_6.py                 # 200 threats, inside the run lock
     python saboteur_v0_6.py --only 1        # 100–199

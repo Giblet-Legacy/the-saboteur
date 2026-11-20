@@ -4,6 +4,27 @@ CHANGELOG.md — build history for The Saboteur, latest entry at top.
 (The v1.0.0 entry below sits above the original title; it is kept as
 written. Entries from here on go at the top.)
 
+## [v0.9.0] — 2026-11-20 — frozen, with 0.6.0, 0.7.0 and 0.8.0
+
+### Good
+- Frozen together (James: "yes 7", CONSOLIDATION_V1 §7.2). VERSION
+  0.9.0-dev -> 0.9.0, and the headers say `0.x.0 (frozen 2026-11-20)`.
+- Tagged `v0.9.0`, the repository's first tag. The 1.0.0 consolidation
+  archives these bytes.
+- Tests: 76/76.
+- Runs: 001–400 PASS 388 / FAIL 12; 401–800 PASS 388 / FAIL 12;
+  0801–1000 PASS 70 / FAIL 130. In all, 154 red, 0 UGLY, 0 SKIP.
+
+### Bad
+- 154 red threats in 7 gap classes stand (SPEC_V0_5 §7, SPEC_V0_6 §3,
+  SPEC_V0_7 §3, SPEC_V0_8 §4, SPEC_V0_9 §4). Each fix is a new layer in
+  its repository, when James decides.
+- A full run of 1000 takes most of an hour on the laptop. James's
+  answer is rotation, 250 every 6 hours, in 1.1.0 (CONSOLIDATION_V1 §8).
+
+### Ugly
+- No ugly items.
+
 ## [v0.9.0-dev] — 2026-11-20 — 1000 threats, the known gaps mapped
 
 ### Good

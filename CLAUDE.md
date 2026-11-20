@@ -29,7 +29,7 @@ S24/Termux and laptop/VS Code. State is confirmed, never assumed. LF-only.
 British English (-ise, artefact). Good/Bad/Ugly CHANGELOG, latest at top.
 Header discipline on every file and function.
 
-## 0.9.0 (2026-11-20)
+## 0.9.0 (frozen 2026-11-20)
 Run `python saboteur_v0_9.py` (SPEC_V0_9.md): 1000 threats, numbered 0001–1000,
 each new one naming its `gap`. 0.8.0 and 0.9.0 install their mutation
 module by rebinding `saboteur_v0_5.mutations_v0_5` for the run. That
@@ -37,12 +37,12 @@ patching is why 1.0.0 consolidates (CONSOLIDATION_V1.md). Run full
 sweeps in your own `--parent` (the scratchpad) so they never clash with
 James's runs.
 
-## 0.7.0-dev (2026-11-20)
+## 0.7.0 (frozen 2026-11-20)
 Run `python saboteur_v0_7.py` (SPEC_V0_7.md): 400 threats in
 `threats_v0_7/`. 001–200 are `threats_v0_6/` byte for byte. The test suite
 refuses two threats that are the same attack.
 
-## 0.6.0-dev (2026-11-20)
+## 0.6.0 (frozen 2026-11-20)
 Run `python saboteur_v0_6.py` (SPEC_V0_6.md): 0.5.1's run (with the lock)
 against `threats_v0_6/`, 200 threats. 001–108 are `threats_v0_5/` byte for
 byte and are never edited. A new attack is threat 201 onwards in a new

@@ -136,3 +136,4 @@ James decides.
 
 - **SPEC V0.9 0.9.0**: 2026-11-20, by the VS Code AI on James's "fill
   the known gaps to add 200 more to bring us to 1000".
+- Frozen 2026-11-20 with 0.6.0–0.9.0 together (James: "yes 7", CONSOLIDATION_V1 §7.2).
