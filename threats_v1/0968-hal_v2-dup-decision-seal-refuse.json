@@ -1,0 +1,12 @@
+{
+  "name": "Hide a duplicate decision key in seal-refuse (hal_v2)",
+  "target_file": "seals/seal-refuse.json",
+  "mutation": "json_dup_key_first:decision=\"approve\"",
+  "tool": "python legacy_check_v1.py --layer hal_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed seals/seal-refuse.json: hal_v2.verify_seal"
+  ],
+  "notes": "The layer is handed a parsed dict, so the duplicate is resolved (last wins, the signed value) before it is asked. Every reader that parses the file differently sees the Saboteur's value. Gap class 2: expected red.",
+  "gap": "dup-key"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Set entity-james's name to true (sign_v2)",
+  "target_file": "capsules/entity-james.sc.json",
+  "mutation": "json_set:name=true",
+  "tool": "python legacy_check_v1.py --layer sign_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed capsules/entity-james.sc.json: sign_v2.verify_capsule"
+  ],
+  "notes": "Type confusion on a signed field: the layer must say no, never raise."
+}

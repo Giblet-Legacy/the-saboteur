@@ -1,0 +1,11 @@
+{
+  "name": "Backdate a capsule (sign_v2)",
+  "target_file": "capsules/entity-james.sc.json",
+  "mutation": "json_set:created=\"2020-01-01T00:00:00Z\"",
+  "tool": "python legacy_check_v1.py --layer sign_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed capsules/entity-james.sc.json: sign_v2.verify_capsule said no"
+  ],
+  "notes": "created is signed."
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Replace substrate.db with store.db (substrate_v4)",
+  "target_file": "substrate.db",
+  "mutation": "copy_sibling:store.db",
+  "tool": "python legacy_check_v1.py --layer substrate_v4",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed substrate.db: substrate_v4.list_entities"
+  ],
+  "notes": "Substitution: the other database.",
+  "gap": "substitution"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Replay row 3 as row 4 (store_v2_1)",
+  "target_file": "store.db",
+  "mutation": "sqlite:INSERT INTO ledger SELECT 4, prev, record, signer, hash, signature FROM ledger WHERE seq=3",
+  "tool": "python legacy_check_v1.py --layer store_v2_1",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed store.db: store_v2_1.verify_store"
+  ],
+  "notes": "A copied row at a new seq."
+}

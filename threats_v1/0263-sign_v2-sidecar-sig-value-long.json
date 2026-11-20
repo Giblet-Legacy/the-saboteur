@@ -1,0 +1,11 @@
+{
+  "name": "Make the sidecar's signature value 65 bytes (sign_v2)",
+  "target_file": "docs/glossary.md.sig",
+  "mutation": "json_set:value=\"0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\"",
+  "tool": "python legacy_check_v1.py --layer sign_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed docs/glossary.md: sign_v2.verify_artifact"
+  ],
+  "notes": "Type confusion: the layer must say no, never raise. value becomes 65 bytes."
+}

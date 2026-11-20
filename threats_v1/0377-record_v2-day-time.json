@@ -1,0 +1,11 @@
+{
+  "name": "Write the day as a timestamp (record_v2)",
+  "target_file": "records/note-boot.sc.json",
+  "mutation": "json_set:day=\"2026-11-20T00:00:00Z\"",
+  "tool": "python legacy_check_v1.py --layer record_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed records/note-boot.sc.json: record_v2.verify_record_file"
+  ],
+  "notes": "Another spelling."
+}

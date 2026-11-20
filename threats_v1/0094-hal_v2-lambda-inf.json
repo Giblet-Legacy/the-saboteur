@@ -1,0 +1,11 @@
+{
+  "name": "Set lambda to Infinity (hal_v2)",
+  "target_file": "seals/seal-approve.json",
+  "mutation": "json_set:validator_lambda=Infinity",
+  "tool": "python legacy_check_v1.py --layer hal_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed seals/seal-approve.json: hal_v2.verify_seal"
+  ],
+  "notes": "HAL v1's gap: inf was AUTHORITY."
+}

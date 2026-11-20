@@ -1,0 +1,11 @@
+{
+  "name": "Hide a duplicate text key in a record (record_v2)",
+  "target_file": "records/note-morning.sc.json",
+  "mutation": "json_dup_key_first:text=\"the saboteur wrote this\"",
+  "tool": "python legacy_check_v1.py --layer record_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed records/note-morning.sc.json: record_v2.verify_record_file"
+  ],
+  "notes": "A last-wins parser sees the signed text; a first-wins parser sees the Saboteur's. record_v2 reads the bytes itself, so this is its call. Expected red."
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Delete james (substrate_v4)",
+  "target_file": "substrate.db",
+  "mutation": "sqlite:DELETE FROM entities WHERE name_key='james gilbert'",
+  "tool": "python legacy_check_v1.py --layer substrate_v4",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed substrate.db: substrate_v4.list_entities"
+  ],
+  "notes": "The member of a subject vanishes; the membership now points at nothing. Gap class 4 (107): nothing chains the rows. Expected red.",
+  "gap": "deleted-row"
+}

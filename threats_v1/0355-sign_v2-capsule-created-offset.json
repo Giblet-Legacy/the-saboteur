@@ -1,0 +1,11 @@
+{
+  "name": "Write created with +00:00 (sign_v2)",
+  "target_file": "capsules/claim-forge.sc.json",
+  "mutation": "json_set:created=\"2026-11-20T00:00:00+00:00\"",
+  "tool": "python legacy_check_v1.py --layer sign_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed capsules/claim-forge.sc.json: sign_v2.verify_capsule"
+  ],
+  "notes": "The same instant, other bytes."
+}

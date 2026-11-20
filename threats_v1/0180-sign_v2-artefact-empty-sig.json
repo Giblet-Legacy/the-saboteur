@@ -1,0 +1,11 @@
+{
+  "name": "Empty the sidecar (sign_v2)",
+  "target_file": "docs/glossary.md.sig",
+  "mutation": "empty",
+  "tool": "python legacy_check_v1.py --layer sign_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed docs/glossary.md: sign_v2.verify_artifact"
+  ],
+  "notes": "Zero bytes."
+}

@@ -17,7 +17,7 @@ Function:
     work is done on a branch and lands on main in one commit at James's
     "freeze".
 
-Version:  plan, agreed (James 2026-11-20: "yes 7"; rotation §8)
+Version:  plan, done (2026-11-20: frozen 1.0.0, tag v1.0.0; rotation next, §8)
 Licence:  MSL-1.0
 Author:   James Gilbert (Giblets Forge)
 
@@ -98,6 +98,39 @@ their siblings and don't run from `archive/`.
    - Tests of v1, v2's the-full-stack default and 0.4.0's no-default
      describe replaced behaviour. They stay with their archive.
    - Write the table into this plan for James.
+   **Step 0 result (2026-11-20, on branch consolidate-1.0.0):**
+
+   - **How it was run:** a throwaway pytest plugin in the scratchpad
+     ran all 76 tests against 0.9.0. No file in the repository changed.
+     In each suite:
+     - the runner's `main` went to `saboteur_v0_9.main`;
+     - `apply_mutation` went to `mutations_v0_9`;
+     - v1's `harness_guard` went to `harness_guard_v2`.
+   - **First pass:** 58 passed and 18 failed.
+   - **The harness's own fault:** pytest's monkeypatch, undoing a test,
+     wrote the plugin's stand-in `main` back into the real
+     saboteur_v0_5. That poisoned the tests after it.
+   - **Second pass:** every failure was rerun alone, in its own process.
+   - **One test left unrun:** 0.4.0's `test_target_is_required` was
+     not rerun. Run under 0.9.0 it calls `main()` with no target, and
+     0.9.0 has a default, so it starts a full 1000-threat run.
+
+   | Suite (tests) | Live as is | Carried with a change | Replaced |
+   |---|---|---|---|
+   | test_harness_guard (5) | | | 5: v1's guard (scratch under ~/forge). 0.9.0 uses harness_guard_v2, tested by test_saboteur_v2. |
+   | test_saboteur_v2 (8) | 8 (the end-to-end test failed first only through the harness fault) | | |
+   | test_saboteur_v0_4 (5) | 3 | | 2: `test_target_is_required` (0.4.0 had no default target). `test_refuses_the_full_stack`: 0.9.0 still refuses with exit 2, but it takes the run lock first, which creates the parent folder, and 0.4.0's test says nothing is touched. 1.0.0 keeps 0.9.0's order. |
+   | test_saboteur_v0_5 (13) | 12 | 1: end-to-end `--only 00` becomes `000`, which is still 0001–0009 and PASS 9 | |
+   | test_saboteur_v0_5_1 (9) | 8 | 1: end-to-end `--only 001` becomes `0001`. Under four digits, `001` catches 0010–0019, which includes the red 0011. | |
+   | test_saboteur_v0_6 (6) | 4 | 1: end-to-end `19` becomes `019` | 1: the default threats are threats_v0_6 |
+   | test_saboteur_v0_7 (6) | 4 | 1: end-to-end `20` becomes `020` | 1: the default threats are threats_v0_7 |
+   | test_saboteur_v0_8 (12) | 10 | 1: end-to-end `42` becomes `042` (`42` matches nothing under four digits) | 1: the runner swaps in mutations_v0_8. 1.0.0 has no swap. |
+   | test_saboteur_v0_9 (12) | 11 (the end-to-end test failed first only through the harness fault) | | 1: the runner swaps in mutations_v0_9. 1.0.0 has no swap; one module holds every mutation. |
+   | **Total (76)** | **60** | **5** | **11** |
+
+   The 11 replaced tests stay in `archive/0.9.0/` with their versions,
+   runnable from a worktree of the tag `v0.9.0`.
+
 2. **Carry every live test forward against 1.0.0:**
    - as `tests/test_saboteur_v1.py`, plus `<suite>_at_v1.py` where a
      suite needs a change;
@@ -108,6 +141,15 @@ their siblings and don't run from `archive/`.
      scratch parent, gives the same verdict for every threat number and
      the same totals;
    - real repo unchanged both times.
+
+   **Gate result (2026-11-20):** 0.9.0 from a worktree of the tag
+   `v0.9.0` and 1.0.0 from the branch each ran all 1000 threats, each in
+   its own scratch parent, with FORGE_LEGACY_ROOT pointing at the real
+   layers.
+   - Both: PASS 846, FAIL 154, UGLY 0, SKIP 0, real repo unchanged.
+   - Threats with a different verdict or name: **0**.
+   - The red set is the 154 recorded at 0.9.0.
+   - GATE: PASS.
 
 ## 4. The order of work
 

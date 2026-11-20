@@ -1,0 +1,11 @@
+{
+  "name": "Change a subject's lookup key (substrate_v4)",
+  "target_file": "substrate.db",
+  "mutation": "sqlite:UPDATE subjects SET name_key='the saboteur'",
+  "tool": "python legacy_check_v1.py --layer substrate_v4",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed substrate.db: substrate_v4.list_subjects"
+  ],
+  "notes": "name_key is not in the signed capsule: a lookup by name now finds nothing. Expected red."
+}

@@ -32,9 +32,9 @@ if _RUNTIME not in sys.path:
 DECLARATION = {
     "repo": "the-saboteur",
     "role": "Tier 2 — The Saboteur (Adversarial Testing)",
-    "main": ["saboteur_v0_4.py"],
+    "main": ["saboteur_v1.py"],
     "tests": True,
-    "watches": ["saboteur_v0_4.py", "threats_v0_4/"],
+    "watches": ["saboteur_v1.py", "mutations_v1.py", "threats_v1/", "fixture_v1/"],
     "may_propose": True,
 }
 

@@ -1,0 +1,12 @@
+{
+  "name": "Replace charter-md-sig with policy-writes (sign_v2)",
+  "target_file": "docs/charter.md.sig",
+  "mutation": "copy_sibling:../capsules/policy-writes.sc.json",
+  "tool": "python legacy_check_v1.py --layer sign_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed docs/charter.md: sign_v2.verify_artifact"
+  ],
+  "notes": "Substitution: a signed capsule where a sidecar belongs.",
+  "gap": "substitution"
+}

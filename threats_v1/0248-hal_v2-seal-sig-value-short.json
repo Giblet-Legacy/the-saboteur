@@ -1,0 +1,11 @@
+{
+  "name": "Make the seal's signature value one byte (hal_v2)",
+  "target_file": "seals/seal-approve.json",
+  "mutation": "json_set:signature.value=\"00\"",
+  "tool": "python legacy_check_v1.py --layer hal_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed seals/seal-approve.json: hal_v2.verify_seal"
+  ],
+  "notes": "Type confusion: the layer must say no, never raise. value becomes one byte."
+}

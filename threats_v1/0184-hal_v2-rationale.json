@@ -1,0 +1,11 @@
+{
+  "name": "Rewrite a seal's rationale (hal_v2)",
+  "target_file": "seals/seal-refuse.json",
+  "mutation": "json_set:rationale=\"the saboteur said so\"",
+  "tool": "python legacy_check_v1.py --layer hal_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed seals/seal-refuse.json: hal_v2.verify_seal"
+  ],
+  "notes": "rationale is signed."
+}

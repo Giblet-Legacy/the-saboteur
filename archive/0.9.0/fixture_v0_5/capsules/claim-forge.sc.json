@@ -1,0 +1,12 @@
+{
+  "created": "2026-11-20T00:00:00Z",
+  "face": "FACT",
+  "object": "is in Wales",
+  "signature": {
+    "algorithm": "Ed25519",
+    "key_id": "did:key:z6Mkv55P9KdMg4VMZinb6Mp8Jent1SkyTzjbAfLSddjAhk35",
+    "value": "b63c6603c114ad04cf4ac24daf14321c20d46a142f042cbfdeb6cffb528d7037a71488aef9fcc7e20189e373ea6b349d6baaaa2e0d15d9abfeef9874aa522b03"
+  },
+  "subject": "the forge",
+  "type": "claim"
+}

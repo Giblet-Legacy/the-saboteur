@@ -1,0 +1,12 @@
+{
+  "document_sha256": "b74bb8f1a2bc10a7820a8a8e5f1fecbd305798025ebcd850f8753d2127e80b74",
+  "layer": "P2",
+  "signature": {
+    "algorithm": "Ed25519",
+    "key_id": "did:key:z6Mkv55P9KdMg4VMZinb6Mp8Jent1SkyTzjbAfLSddjAhk35",
+    "value": "a5a115bae5b62c8688c66d59f802aaf7b2dea5b3fe1ad1c70881364c892d33ea70ea91202a899766e71aff2ec3a14557c774a619a622abfabbd50104eb369a08"
+  },
+  "text": "every signature goes through sign.py",
+  "type": "spec",
+  "version": "2.0.0"
+}

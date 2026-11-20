@@ -1,0 +1,11 @@
+{
+  "name": "Delete the last row (roll the store back) (store_v2_1)",
+  "target_file": "store.db",
+  "mutation": "sqlite:DELETE FROM ledger WHERE seq=3",
+  "tool": "python legacy_check_v1.py --layer store_v2_1",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed store.db: store_v2_1.verify_store"
+  ],
+  "notes": "Like the ledger rollback: expected red until the head is anchored."
+}

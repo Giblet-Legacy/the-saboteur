@@ -1,0 +1,12 @@
+{
+  "name": "Hide a duplicate subject inside a ledger record (canon_verify_v2)",
+  "target_file": "ledger.jsonl",
+  "mutation": "text_replace:\"subject\":\"the voice\"=>\"subject\":\"forged\",\"subject\":\"the voice\"",
+  "tool": "python legacy_check_v1.py --layer canon_verify_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed ledger.jsonl: canon_verify_v2.verify_ledger"
+  ],
+  "notes": "A nested duplicate key in a ledger row.",
+  "gap": "dup-key"
+}

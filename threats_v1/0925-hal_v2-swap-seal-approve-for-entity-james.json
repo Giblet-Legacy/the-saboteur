@@ -1,0 +1,12 @@
+{
+  "name": "Replace seal-approve with entity-james (hal_v2)",
+  "target_file": "seals/seal-approve.json",
+  "mutation": "copy_sibling:../capsules/entity-james.sc.json",
+  "tool": "python legacy_check_v1.py --layer hal_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed seals/seal-approve.json: hal_v2.verify_seal"
+  ],
+  "notes": "Substitution: a valid signed file in another's place. Gap class 7 (SPEC_V0_8): red unless the kinds differ.",
+  "gap": "substitution"
+}

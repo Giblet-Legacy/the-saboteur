@@ -1,0 +1,11 @@
+{
+  "name": "Empty a record file (record_v2)",
+  "target_file": "records/note-morning.sc.json",
+  "mutation": "empty",
+  "tool": "python legacy_check_v1.py --layer record_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed records/note-morning.sc.json: record_v2.verify_record_file"
+  ],
+  "notes": "Zero bytes."
+}

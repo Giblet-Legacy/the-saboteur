@@ -1,0 +1,11 @@
+{
+  "name": "Copy an entity under a new id and name (substrate_v4)",
+  "target_file": "substrate.db",
+  "mutation": "sqlite:INSERT INTO entities SELECT '1'||substr(entity_id,2), 'the forge 2', signer, capsule, created_at FROM entities WHERE name_key='the forge'",
+  "tool": "python legacy_check_v1.py --layer substrate_v4",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed substrate.db: substrate_v4.list_entities"
+  ],
+  "notes": "A copied capsule under an id that is not its hash."
+}

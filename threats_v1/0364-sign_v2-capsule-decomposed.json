@@ -1,0 +1,11 @@
+{
+  "name": "Write a name in decomposed Unicode (sign_v2)",
+  "target_file": "capsules/entity-james.sc.json",
+  "mutation": "json_set:name=\"Jamés Gilbert\"",
+  "tool": "python legacy_check_v1.py --layer sign_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed capsules/entity-james.sc.json: sign_v2.verify_capsule"
+  ],
+  "notes": "A combining accent."
+}

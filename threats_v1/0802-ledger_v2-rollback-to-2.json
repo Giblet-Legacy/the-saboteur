@@ -1,0 +1,12 @@
+{
+  "name": "Roll the ledger back to 2 entries (ledger_v2)",
+  "target_file": "ledger.jsonl",
+  "mutation": "keep_first_lines:2",
+  "tool": "python legacy_check_v1.py --layer ledger_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed ledger.jsonl: ledger_v2.verify_ledger"
+  ],
+  "notes": "Rollback 4 deep: every remaining row is valid. Gap class 1 (SPEC_V0_5 §7): expected red.",
+  "gap": "rollback"
+}

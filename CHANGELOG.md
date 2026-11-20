@@ -4,6 +4,56 @@ CHANGELOG.md — build history for The Saboteur, latest entry at top.
 (The v1.0.0 entry below sits above the original title; it is kept as
 written. Entries from here on go at the top.)
 
+## [v1.0.0] — 2026-11-20 — frozen: the 0.9.0 consolidation
+
+(The `[v1.0.0]` entry further down is the original `saboteur.py`,
+written before the 0.x numbering; roadmap NAMING.md.)
+
+### Good
+- James: "ok so this brings us to the point were we consolodate archive
+  and parent up to v1.0", "yes 7", then steps 2–8. Done on branch
+  consolidate-1.0.0 to CONSOLIDATION_V1.md, merged into main in one
+  commit, tagged `v1.0.0`.
+- **One version, the same behaviour.** The 0.9.0 chain (six runner
+  layers, five mutation layers, two run-time module swaps) is now:
+  - `saboteur_v1.py`, `mutations_v1.py` and `harness_guard_v1.py`, with
+    their code copied from the archive by script;
+  - `fixture_v1/`, the same bytes and keys, not rebuilt;
+  - `threats_v1/`, the same 1000 threats, with the tool renamed;
+  - `SPEC_V1.md`, one spec, with the record of known gaps carried
+    forward.
+- **The archive.** Every older file (2,603) is in `archive/0.9.0/`, moved
+  with `git mv`; the file hashes before and after match. `pytest.ini`
+  keeps it out of collection. Old versions run from a worktree of the
+  tag `v0.9.0`.
+- **Step 0:** of 76 tests, 60 were live, 5 live with a four-digit
+  `--only`, and 11 replaced. The 65 were carried into eight `_at_v1`
+  suites, written first and run red. Now 65/65.
+- **The gate.** 0.9.0 from the tag and 1.0.0 each ran all 1000 threats:
+  PASS 846, FAIL 154, UGLY 0, SKIP 0, with the real repo unchanged. All
+  1000 verdicts are the same, and the red set is the 154 of SPEC_V1 §6.
+- roadmap: NAMING.md (the-saboteur in line from 1.0.0), VPS.md and
+  STATUS.md.
+
+### Bad
+- The 154 red threats stand, in 7 gap classes (SPEC_V1 §6). Each fix
+  is a new layer in its repository, when James decides.
+- The banner still says "THE SABOTEUR v2", because 1.0.0 changes no
+  output. New wording can come after the consolidation.
+- The archived layers don't run from `archive/`; use the tag.
+- The agent check (`agent_the_saboteur.py`) takes many minutes. Its
+  archive check (agent-layer `_check_archive`) runs three git commands
+  per archived file, and `archive/0.9.0/` holds 2,603. That is about
+  7,800 git calls. A speed limit in agent-layer, not a 1.0.0 fault, and
+  agent-layer's to answer.
+
+### Ugly
+- In Step 0's first pass, the AI's own harness polluted later tests:
+  pytest's monkeypatch wrote a stand-in back into a real module. Every
+  failure was rerun alone to sort that out (CONSOLIDATION_V1 §3.1).
+  One rerun started a full run in the default parent. It was stopped,
+  and its stale lock removed.
+
 ## [v0.9.0] — 2026-11-20 — frozen, with 0.6.0, 0.7.0 and 0.8.0
 
 ### Good

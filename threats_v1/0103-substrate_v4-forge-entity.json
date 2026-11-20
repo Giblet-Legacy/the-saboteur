@@ -1,0 +1,11 @@
+{
+  "name": "Replace an entity with one signed by another key (substrate_v4)",
+  "target_file": "substrate.db",
+  "mutation": "substrate_forge_last:entities",
+  "tool": "python legacy_check_v1.py --layer substrate_v4",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed substrate.db: substrate_v4.list_entities"
+  ],
+  "notes": "Same name, a perfect capsule, the id is its hash, the signer column names the attacker. A row that certifies itself proves integrity, not authorship: expected red."
+}

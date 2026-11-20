@@ -1,0 +1,11 @@
+{
+  "name": "Delete an entity row (substrate_v4)",
+  "target_file": "substrate.db",
+  "mutation": "sqlite:DELETE FROM entities WHERE capsule LIKE '%The Forge%'",
+  "tool": "python legacy_check_v1.py --layer substrate_v4",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed substrate.db: substrate_v4.list_entities"
+  ],
+  "notes": "Nothing chains the rows: expected red."
+}

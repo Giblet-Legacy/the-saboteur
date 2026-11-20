@@ -1,0 +1,11 @@
+{
+  "name": "Store a record that is a JSON string (store_v2_1)",
+  "target_file": "store.db",
+  "mutation": "sqlite:UPDATE ledger SET record='\"text\"' WHERE seq=1",
+  "tool": "python legacy_check_v1.py --layer store_v2_1",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed store.db: store_v2_1.verify_store"
+  ],
+  "notes": "A record is an object."
+}

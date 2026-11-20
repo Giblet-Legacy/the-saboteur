@@ -1,0 +1,11 @@
+{
+  "name": "Change a seal's version",
+  "target_file": "seals/seal-approve.json",
+  "mutation": "json_set:seal_version=\"9.9.9\"",
+  "tool": "python legacy_check_v1.py --layer hal_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed seals/seal-approve.json: hal_v2.verify_seal"
+  ],
+  "notes": "seal_version is signed."
+}

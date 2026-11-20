@@ -1,0 +1,11 @@
+{
+  "name": "Put a non-ASCII letter in a record (ledger_v2)",
+  "target_file": "ledger.jsonl",
+  "mutation": "non_ascii",
+  "tool": "python legacy_check_v1.py --layer ledger_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed ledger.jsonl: ledger_v2.verify_ledger"
+  ],
+  "notes": "An e becomes é (UTF-8)."
+}
