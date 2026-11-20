@@ -1,0 +1,11 @@
+{
+  "name": "Delete a seal (hal_v2)",
+  "target_file": "seals/seal-approve.json",
+  "mutation": "delete",
+  "tool": "python legacy_check_v1.py",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed seals/seal-approve.json: manifest.files missing"
+  ],
+  "notes": "Caught by the manifest, not the layer."
+}

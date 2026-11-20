@@ -1,0 +1,11 @@
+{
+  "name": "Renumber a middle row (canon_verify_v2)",
+  "target_file": "ledger.jsonl",
+  "mutation": "line_set:3:seq=9",
+  "tool": "python legacy_check_v1.py --layer canon_verify_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed ledger.jsonl: canon_verify_v2.verify_ledger"
+  ],
+  "notes": "seq is hashed and must count up by one. P6 is the independent auditor: it must agree with P4."
+}

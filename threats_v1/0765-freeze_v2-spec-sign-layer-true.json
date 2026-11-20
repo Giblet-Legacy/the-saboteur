@@ -1,0 +1,11 @@
+{
+  "name": "Set spec-sign's layer to true (freeze_v2)",
+  "target_file": "frozen/spec-sign.sc.json",
+  "mutation": "json_set:layer=true",
+  "tool": "python legacy_check_v1.py --layer freeze_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed frozen/spec-sign.sc.json: freeze_v2.verify_frozen_capsule"
+  ],
+  "notes": "Type confusion on a signed field: the layer must say no, never raise."
+}

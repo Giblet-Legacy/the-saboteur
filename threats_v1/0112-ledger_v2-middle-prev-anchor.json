@@ -1,0 +1,11 @@
+{
+  "name": "Point a middle row's prev at the zero anchor (ledger_v2)",
+  "target_file": "ledger.jsonl",
+  "mutation": "line_set:2:prev=\"0000000000000000000000000000000000000000000000000000000000000000\"",
+  "tool": "python legacy_check_v1.py --layer ledger_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed ledger.jsonl: ledger_v2.verify_ledger"
+  ],
+  "notes": "A second genesis in the middle of the chain."
+}

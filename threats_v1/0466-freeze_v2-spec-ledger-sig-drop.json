@@ -1,0 +1,11 @@
+{
+  "name": "Remove spec-ledger's signature (freeze_v2)",
+  "target_file": "frozen/spec-ledger.sc.json",
+  "mutation": "json_drop:signature",
+  "tool": "python legacy_check_v1.py --layer freeze_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed frozen/spec-ledger.sc.json: freeze_v2.verify_frozen_capsule"
+  ],
+  "notes": "An unsigned file."
+}

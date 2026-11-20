@@ -1,0 +1,11 @@
+{
+  "name": "Raise the validator tier to AUTHORITY (hal_v2)",
+  "target_file": "seals/seal-approve.json",
+  "mutation": "json_set:validator_tier=\"AUTHORITY\"",
+  "tool": "python legacy_check_v1.py --layer hal_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed seals/seal-approve.json: hal_v2.verify_seal"
+  ],
+  "notes": "The tier must match the lambda under the ladder."
+}

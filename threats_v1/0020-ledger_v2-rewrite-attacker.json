@@ -1,0 +1,11 @@
+{
+  "name": "Rewrite the last entry under another key (ledger_v2)",
+  "target_file": "ledger.jsonl",
+  "mutation": "ledger_rewrite_last_attacker",
+  "tool": "python legacy_check_v1.py --layer ledger_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed ledger.jsonl: ledger_v2.verify_ledger"
+  ],
+  "notes": "Record changed, re-hashed and re-signed by an attacker who names itself."
+}

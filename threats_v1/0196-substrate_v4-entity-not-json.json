@@ -1,0 +1,11 @@
+{
+  "name": "Make an entity's capsule not JSON (substrate_v4)",
+  "target_file": "substrate.db",
+  "mutation": "sqlite:UPDATE entities SET capsule='not json' WHERE name_key='the forge'",
+  "tool": "python legacy_check_v1.py --layer substrate_v4",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed substrate.db: substrate_v4.list_entities"
+  ],
+  "notes": "A capsule that cannot be read."
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Store row 0's record newline (store_v2_1)",
+  "target_file": "store.db",
+  "mutation": "sqlite:UPDATE ledger SET record=record||char(10) WHERE seq=0",
+  "tool": "python legacy_check_v1.py --layer store_v2_1",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed store.db: store_v2_1.verify_store"
+  ],
+  "notes": "Same content, other bytes. Gap class 6 (140).",
+  "gap": "non-canonical"
+}

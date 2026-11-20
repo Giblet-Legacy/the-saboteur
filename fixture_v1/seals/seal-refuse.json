@@ -1,0 +1,38 @@
+{
+  "action_type": "claim.commit",
+  "algorithm": "Ed25519",
+  "decision": "refuse",
+  "ladder": {
+    "domain": null,
+    "thresholds": {
+      "AUTHORITY": 2.0,
+      "NOVICE": 0.6,
+      "SENIOR": 1.5,
+      "TRUSTED": 1.0
+    }
+  },
+  "lambda_attestation": {
+    "lambda": 0.64,
+    "signature": {
+      "algorithm": "Ed25519",
+      "key_id": "did:key:z6Mkr2CdL19jKDHM9wi4LzzHN44YQwMxcCxG1k9DAKUxhfMY",
+      "value": "edad34407f8cf18d67aa149c001d8d3bab14eeda899449a34360b7db99967b42db411f8b1b50ad06bee75c4ecd799141fd7e25142b8707ed00edd8f692a6a200"
+    },
+    "timestamp": 1795000000,
+    "type": "hal.lambda_attestation",
+    "validator_key_id": "did:key:z6Mkv55P9KdMg4VMZinb6Mp8Jent1SkyTzjbAfLSddjAhk35",
+    "version": "1.1.0"
+  },
+  "rationale": "fixture decision",
+  "seal_version": "1.1.0",
+  "separation": "attested",
+  "signature": {
+    "algorithm": "Ed25519",
+    "key_id": "did:key:z6Mkv55P9KdMg4VMZinb6Mp8Jent1SkyTzjbAfLSddjAhk35",
+    "value": "29d0153c88c5a5321e1ad3d8439012646b40f0a5aa7bdfaeec95ccdbf2d4795cdf423f2659dca35c4b4bae7a64f3fd0ab7324936bd641c48189042291a60be09"
+  },
+  "subject_id": "claim-seal-refuse",
+  "timestamp": 1795000100,
+  "validator_lambda": 0.64,
+  "validator_tier": "NOVICE"
+}

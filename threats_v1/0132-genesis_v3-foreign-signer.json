@@ -1,0 +1,11 @@
+{
+  "name": "Name another signer on the genesis row (genesis_v3)",
+  "target_file": "ledger.jsonl",
+  "mutation": "line_set:0:signer=\"did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK\"",
+  "tool": "python legacy_check_v1.py --layer genesis_v3",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed ledger.jsonl: genesis_v3.verify_genesis"
+  ],
+  "notes": "The genesis names its owner."
+}

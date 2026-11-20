@@ -1,0 +1,11 @@
+{
+  "name": "Cut document_sha256 to 63 characters (freeze_v2)",
+  "target_file": "frozen/spec-ledger.sc.json",
+  "mutation": "json_set:document_sha256=\"000000000000000000000000000000000000000000000000000000000000000\"",
+  "tool": "python legacy_check_v1.py --layer freeze_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed frozen/spec-ledger.sc.json: freeze_v2.verify_frozen_capsule"
+  ],
+  "notes": "Not a sha256."
+}

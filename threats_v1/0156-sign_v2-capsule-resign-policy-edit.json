@@ -1,0 +1,11 @@
+{
+  "name": "Rewrite a policy and re-sign it with another key (sign_v2)",
+  "target_file": "capsules/policy-writes.sc.json",
+  "mutation": "resign_attacker_edit:rule=\"the saboteur decides\"",
+  "tool": "python legacy_check_v1.py --layer sign_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed capsules/policy-writes.sc.json: sign_v2.verify_capsule"
+  ],
+  "notes": "Content and signature both forged."
+}

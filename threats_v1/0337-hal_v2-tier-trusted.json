@@ -1,0 +1,11 @@
+{
+  "name": "Raise the refusal's tier to TRUSTED (hal_v2)",
+  "target_file": "seals/seal-refuse.json",
+  "mutation": "json_set:validator_tier=\"TRUSTED\"",
+  "tool": "python legacy_check_v1.py --layer hal_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed seals/seal-refuse.json: hal_v2.verify_seal"
+  ],
+  "notes": "0.64 is NOVICE under the ladder."
+}

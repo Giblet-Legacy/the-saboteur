@@ -1,0 +1,11 @@
+{
+  "name": "Set lambda to NaN (hal_v2)",
+  "target_file": "seals/seal-approve.json",
+  "mutation": "json_set:validator_lambda=NaN",
+  "tool": "python legacy_check_v1.py --layer hal_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed seals/seal-approve.json: hal_v2.verify_seal"
+  ],
+  "notes": "HAL v1's gap: NaN was AUTHORITY."
+}

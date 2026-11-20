@@ -1,0 +1,11 @@
+{
+  "name": "Delete the store (store_v2_1)",
+  "target_file": "store.db",
+  "mutation": "delete",
+  "tool": "python legacy_check_v1.py",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed store.db: manifest.files missing"
+  ],
+  "notes": "Caught by the manifest, not the layer: store_v2_1 is never asked."
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Add an unsigned field to a row (ledger_v2)",
+  "target_file": "ledger.jsonl",
+  "mutation": "line_set:2:note=\"added later\"",
+  "tool": "python legacy_check_v1.py --layer ledger_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed ledger.jsonl: ledger_v2.verify_ledger"
+  ],
+  "notes": "Six typed fields, no more."
+}

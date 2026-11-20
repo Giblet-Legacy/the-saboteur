@@ -1,0 +1,13 @@
+{
+  "declaration": {
+    "scope": "the legacy",
+    "sensitivity": "0.6"
+  },
+  "rule": "every write is signed",
+  "signature": {
+    "algorithm": "Ed25519",
+    "key_id": "did:key:z6Mkv55P9KdMg4VMZinb6Mp8Jent1SkyTzjbAfLSddjAhk35",
+    "value": "2dc6905e8f56a82512328a772903aa56f3d249aeca48318a7776073f19ca65d56593256731687508c4c65e2fd7684263a26884f6fc96600535da68c97599360e"
+  },
+  "type": "policy"
+}
