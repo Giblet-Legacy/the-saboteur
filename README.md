@@ -11,7 +11,7 @@ Tier:     Tier 2 — The Saboteur (Adversarial Testing)
 Depends:  The Legacy layers it attacks (siblings, or FORGE_LEGACY_ROOT)
 Licence:  MSL-1.0
 Author:   James Gilbert (Giblets Forge)
-Status:   1.0.0-dev (the 0.9.0 consolidation, branch consolidate-1.0.0)
+Status:   1.0.0 (frozen 2026-11-20; the 0.9.0 consolidation)
 
 ## The Challenge
 Build a harness that attacks our own stack and proves every tool fails
@@ -58,7 +58,7 @@ v2's harness with `--target` required and the-full-stack refused:
 
     python saboteur_v0_4.py --target ../ledger-layer     # threats from threats_v0_4/
 
-## 1.0.0-dev: one version, the same 1000 attacks (2026-11-20)
+## 1.0.0 (frozen 2026-11-20): one version, the same 1000 attacks
 
     python saboteur_v1.py                   # 1000 threats against fixture_v1/, inside the run lock
     python saboteur_v1.py --only 08         # 0800–0899

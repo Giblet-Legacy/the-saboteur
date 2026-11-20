@@ -30,7 +30,7 @@ Depends:  envelope_v2, sign_v2, freeze_v2, ledger_v2, genesis_v3,
           record_v2, hal_v2, store_v2_1, substrate_v4 (siblings of
           the-saboteur, or FORGE_LEGACY_ROOT)
 Spec:     SPEC_V1.md 1.0.0
-Version:  1.0.0-dev
+Version:  1.0.0 (frozen 2026-11-20)
 
     build_fixture_v0_5.py (archive/0.9.0) under its 1.0.0 name; the code
     differs only in the folder and check-tool names.

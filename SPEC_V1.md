@@ -16,7 +16,7 @@ Tier:      Tier 2 — The Saboteur
 Depends:   the Legacy layers it attacks: envelope_v2, sign_v2, freeze_v2,
            ledger_v2, canon_verify_v2, genesis_v3, record_v2, hal_v2,
            store_v2_1, substrate_v4 (siblings, or FORGE_LEGACY_ROOT)
-Version:   SPEC V1 1.0.0-dev
+Version:   SPEC V1 1.0.0
 Licence:   MSL-1.0
 Author:    James Gilbert (Giblets Forge)
 
@@ -207,5 +207,9 @@ carry forward every live test of the archived suites (CONSOLIDATION_V1
 
 ## Document control
 
-- **SPEC V1 1.0.0-dev**: 2026-11-20, by the VS Code AI on branch
+- **SPEC V1 1.0.0**: 2026-11-20, by the VS Code AI on branch
   consolidate-1.0.0 (CONSOLIDATION_V1 §4.5).
+- Frozen 2026-11-20 (James: "step 8"). Gate (CONSOLIDATION_V1 §3.3):
+  0.9.0 from the tag and 1.0.0 each ran all 1000 threats. Both gave PASS
+  846, FAIL 154, UGLY 0, SKIP 0, with the real repo unchanged. All 1000
+  verdicts are the same, and the red set is the 154 of §6.

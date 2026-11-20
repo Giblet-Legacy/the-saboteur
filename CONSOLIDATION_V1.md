@@ -17,7 +17,7 @@ Function:
     work is done on a branch and lands on main in one commit at James's
     "freeze".
 
-Version:  plan, agreed (James 2026-11-20: "yes 7"; rotation §8)
+Version:  plan, done (2026-11-20: frozen 1.0.0, tag v1.0.0; rotation next, §8)
 Licence:  MSL-1.0
 Author:   James Gilbert (Giblets Forge)
 
@@ -141,6 +141,15 @@ their siblings and don't run from `archive/`.
      scratch parent, gives the same verdict for every threat number and
      the same totals;
    - real repo unchanged both times.
+
+   **Gate result (2026-11-20):** 0.9.0 from a worktree of the tag
+   `v0.9.0` and 1.0.0 from the branch each ran all 1000 threats, each in
+   its own scratch parent, with FORGE_LEGACY_ROOT pointing at the real
+   layers.
+   - Both: PASS 846, FAIL 154, UGLY 0, SKIP 0, real repo unchanged.
+   - Threats with a different verdict or name: **0**.
+   - The red set is the 154 recorded at 0.9.0.
+   - GATE: PASS.
 
 ## 4. The order of work
 

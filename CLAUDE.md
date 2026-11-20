@@ -30,7 +30,7 @@ S24/Termux and laptop/VS Code. State is confirmed, never assumed. LF-only.
 British English (-ise, artefact). Good/Bad/Ugly CHANGELOG, latest at top.
 Header discipline on every file and function.
 
-## 1.0.0-dev (2026-11-20, branch consolidate-1.0.0)
+## 1.0.0 (frozen 2026-11-20)
 Run `python saboteur_v1.py` (SPEC_V1.md): the 0.9.0 chain consolidated into
 `saboteur_v1`, `mutations_v1` and `harness_guard_v1`, with `fixture_v1/`
 and `threats_v1/` (1000; 154 red, SPEC_V1 §6).

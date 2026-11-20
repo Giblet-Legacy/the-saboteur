@@ -33,7 +33,7 @@ Internal helpers:
 
 Tier:     Tier 2 — The Saboteur, 1.0.0
 Spec:     SPEC_V1.md 1.0.0
-Version:  1.0.0-dev
+Version:  1.0.0 (frozen 2026-11-20)
 
     legacy_check_v0_5.py (archive/0.9.0/fixture_v0_5) under its 1.0.0
     name: the code below the header is unchanged.

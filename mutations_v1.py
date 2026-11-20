@@ -27,7 +27,7 @@ Tier:     Tier 2 — The Saboteur, 1.0.0
 Depends:  cryptography; envelope_v2, sign_v2, freeze_v2, substrate_v2
           (forgeries only, found at FORGE_LEGACY_ROOT, else siblings)
 Spec:     SPEC_V1.md 1.0.0
-Version:  1.0.0-dev
+Version:  1.0.0 (frozen 2026-11-20)
 Licence:  MSL-1.0
 Author:   James Gilbert (Giblets Forge)
 """
