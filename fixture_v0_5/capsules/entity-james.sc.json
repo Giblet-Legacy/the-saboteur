@@ -1,0 +1,11 @@
+{
+  "created": "2026-11-20T00:00:00Z",
+  "kind": "person",
+  "name": "James Gilbert",
+  "signature": {
+    "algorithm": "Ed25519",
+    "key_id": "did:key:z6Mkv55P9KdMg4VMZinb6Mp8Jent1SkyTzjbAfLSddjAhk35",
+    "value": "62c546ef374edbfc4dc31f56789a7875efdd93269683027f683a1ee1f69c164cdd9c51a3d5b5b3f82f535e18e3017b98dbb5a2ee2f48bfd01c56acf9f731d501"
+  },
+  "type": "entity"
+}

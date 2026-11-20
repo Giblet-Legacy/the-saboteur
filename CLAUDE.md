@@ -29,6 +29,21 @@ S24/Termux and laptop/VS Code. State is confirmed, never assumed. LF-only.
 British English (-ise, artefact). Good/Bad/Ugly CHANGELOG, latest at top.
 Header discipline on every file and function.
 
+## 0.5.0-dev (2026-11-20)
+Run `python saboteur_v0_5.py` (SPEC_V0_5.md).
+
+- **Target:** `fixture_v0_5/`, built by `build_fixture_v0_5.py` with the
+  real layers and throwaway keys. Never ~/.forge: it holds James's key.
+- **Tool:** `legacy_check_v0_5.py --layer X`.
+- **Threats:** 108 in `threats_v0_5/`.
+- **Mutations:** `mutations_v0_5.py`, which falls through to v2.
+- **Adding an attack:** write a new threat file using a parametrised
+  mutation (json_set, sqlite, line_set and so on). A mutation that
+  changes nothing must raise, so the harness reports it as SKIP and
+  never as a pass.
+- **Rebuilding the fixture** changes every signature. Do it only when a
+  layer's format changes.
+
 ## 0.4.0 (2026-11-18)
 the-full-stack is reference only, never a target or a layer (James,
 2026-11-18). Run `python saboteur_v0_4.py --target DIR` (SPEC_V0_4.md): no

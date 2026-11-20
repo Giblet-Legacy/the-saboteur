@@ -58,6 +58,21 @@ v2's harness with `--target` required and the-full-stack refused:
 
     python saboteur_v0_4.py --target ../ledger-layer     # threats from threats_v0_4/
 
+## 0.5.0-dev: 108 attacks on the Legacy's own layers (2026-11-20)
+
+    python saboteur_v0_5.py                 # 108 threats against fixture_v0_5/
+    python saboteur_v0_5.py --only 09       # 091–099 (the HAL seals)
+    python -m pytest -q tests
+
+`fixture_v0_5/` is a small Legacy world made by the real layers with
+throwaway keys. Its `legacy_check_v0_5.py` asks each layer about each
+file. Each threat changes one thing in a scratch copy and passes only
+when the right layer says no, by name.
+
+First run: PASS 100, FAIL 8. The eight are real gaps, recorded and not
+yet fixed (SPEC_V0_5.md §7): ledger and store rollback, a duplicate key
+in a record, and four substrate rows that are not tied to their owner.
+
 `threats_v0_4/` is empty until threats are written against the Legacy's
 own layers. The v2 section below is history: its 15 threats ran
 the-full-stack's tools.

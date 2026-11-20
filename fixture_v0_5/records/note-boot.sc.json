@@ -1,0 +1,10 @@
+{
+  "type": "note",
+  "text": "boot_v2 started three services",
+  "day": "2026-11-20",
+  "signature": {
+    "algorithm": "Ed25519",
+    "key_id": "did:key:z6Mkv55P9KdMg4VMZinb6Mp8Jent1SkyTzjbAfLSddjAhk35",
+    "value": "fd810ecdead41c3c4e0cdc05d200d533134cf929b517a014cadb138ca1472f266c86a2b216bcb90791a36b12f97e52d587b08df74bedc295764e3c223638020e"
+  }
+}

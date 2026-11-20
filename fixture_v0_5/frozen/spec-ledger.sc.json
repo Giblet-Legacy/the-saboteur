@@ -1,0 +1,12 @@
+{
+  "document_sha256": "feba34581b673945e06a7af23e2093369eb18c4976ae240944cbb5a403aef2ce",
+  "layer": "P4",
+  "signature": {
+    "algorithm": "Ed25519",
+    "key_id": "did:key:z6Mkv55P9KdMg4VMZinb6Mp8Jent1SkyTzjbAfLSddjAhk35",
+    "value": "c1f90170687b38aebeee2f74aa53b36fc55435b00a1f36a0e4459199815f96fbc02fb555d51f6b1cb1b007418a6930fed31d3579e251cc0b4c38b604e9ff350c"
+  },
+  "text": "LF only, compact lines, six typed fields",
+  "type": "spec",
+  "version": "2.0.0"
+}

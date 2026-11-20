@@ -3,3 +3,4 @@ __pycache__/
 scratch/
 *.db
 *.pem
+!fixture_v0_5/*.db

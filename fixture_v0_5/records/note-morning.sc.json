@@ -1,0 +1,10 @@
+{
+  "type": "note",
+  "text": "the morning voice ran",
+  "day": "2026-11-20",
+  "signature": {
+    "algorithm": "Ed25519",
+    "key_id": "did:key:z6Mkv55P9KdMg4VMZinb6Mp8Jent1SkyTzjbAfLSddjAhk35",
+    "value": "9eefd4528cf17f435d69b3f9a09e0fad0594bc48c1c4446df16cda8c3cc54360617395fc37f7c5ea81a4c793fc861906c871e4a0bf29782122fc72edd1a86c02"
+  }
+}

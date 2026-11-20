@@ -4,6 +4,58 @@ CHANGELOG.md — build history for The Saboteur, latest entry at top.
 (The v1.0.0 entry below sits above the original title; it is kept as
 written. Entries from here on go at the top.)
 
+## [v0.5.0-dev] — 2026-11-20 — 108 threats against the Legacy's own layers
+
+### Good
+- James: "yes lets a a ton more". `saboteur_v0_5.py` (SPEC_V0_5.md) runs
+  v2's harness, unchanged, against `fixture_v0_5/`: a small Legacy world
+  built by the real layers (`build_fixture_v0_5.py`) and signed with
+  throwaway keys. Only public did:keys are kept. The world holds a
+  ledger, capsules, frozen capsules, records, signed documents, attested
+  HAL seals, a store and a substrate.
+- `legacy_check_v0_5.py` hands each file to its layer and prints which
+  layer said no.
+- `mutations_v0_5.py` adds line and byte attacks, parametrised attacks
+  (json_set, json_drop, duplicate keys, line_set, sqlite) and forgeries
+  made with a fresh attacker key, so a new attack is a new threat file.
+- 108 threats in `threats_v0_5/`, numbered by layer: ledger_v2,
+  canon_verify_v2, genesis_v3, store_v2_1, sign_v2, freeze_v2,
+  record_v2, hal_v2 and substrate_v4.
+- First run: PASS 100, FAIL 8, UGLY 0, SKIP 0, real repo unchanged.
+- No layer raised where its spec says it never raises.
+- Tests: `tests/test_saboteur_v0_5.py` (13). With the frozen suites,
+  31/31.
+
+### Bad
+- Eight red threats, each a real gap, logged red first (SPEC_V0_5 §7).
+  Fixing them is a new layer in that repository, when James says.
+  - **Rollback** (011, 030, 043): dropping the last ledger or store
+    entry leaves a valid chain. Nothing remembers the head.
+  - **Duplicate key** (073): record_v2 accepts a hidden duplicate key in
+    a record.
+  - **Self-certifying rows** (103, 104): substrate_v4 accepts a row
+    re-signed by another key. It proves integrity, not authorship.
+  - **Deleted row** (107): substrate_v4 does not notice a deleted
+    entity.
+  - **Unsigned lookup key** (108): substrate_v4's `name_key` is not
+    signed.
+- The tests were written after the code, not run red first.
+- The VPS check still runs only the Saboteur's tests, not a 0.5.0 run.
+
+### Ugly
+- **v2's `flip_byte_text` could not flip any fixture file.** It starts
+  mid-file, often inside a string, so it saw only the gaps between
+  strings. It also parses a .jsonl as one JSON document.
+  - v2 is frozen. 0.5.0 uses its own `flip_letter`.
+  - The green of v2's threat 01 depended on where the middle of that
+    file fell.
+- **v2's `replace_first_prev` cannot break a genesis.** It sets prev to
+  the zero anchor, which a genesis already has.
+  - The first 0.5.0 run had three silent "passes" from it: 007, 028
+    and 038.
+  - 0.5.0 uses `line_set`, which refuses a mutation that changes
+    nothing.
+
 ## [v0.4.0] — 2026-11-18 — frozen
 
 ### Good

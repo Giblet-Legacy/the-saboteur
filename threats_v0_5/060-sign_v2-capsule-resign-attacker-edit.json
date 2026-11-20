@@ -1,0 +1,11 @@
+{
+  "name": "Rewrite a claim and re-sign it with another key (sign_v2)",
+  "target_file": "capsules/claim-forge.sc.json",
+  "mutation": "resign_attacker_edit:object=\"is in England\"",
+  "tool": "python legacy_check_v0_5.py --layer sign_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed capsules/claim-forge.sc.json: sign_v2.verify_capsule said no"
+  ],
+  "notes": "Content and signature both forged."
+}

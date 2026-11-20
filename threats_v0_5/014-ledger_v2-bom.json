@@ -1,0 +1,11 @@
+{
+  "name": "Put a byte-order mark at the start (ledger_v2)",
+  "target_file": "ledger.jsonl",
+  "mutation": "add_bom",
+  "tool": "python legacy_check_v0_5.py --layer ledger_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed ledger.jsonl: ledger_v2.verify_ledger"
+  ],
+  "notes": "Three bytes before the first row."
+}

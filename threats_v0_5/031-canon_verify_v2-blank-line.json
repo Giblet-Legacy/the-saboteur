@@ -1,0 +1,11 @@
+{
+  "name": "Insert a blank line (canon_verify_v2)",
+  "target_file": "ledger.jsonl",
+  "mutation": "blank_line",
+  "tool": "python legacy_check_v0_5.py --layer canon_verify_v2",
+  "expect_exit": "non-zero",
+  "expect_error_contains": [
+    "failed ledger.jsonl: canon_verify_v2.verify_ledger"
+  ],
+  "notes": "P4 v2 section 2: compact lines, nothing between them. P6 is the independent auditor: it must agree with P4."
+}

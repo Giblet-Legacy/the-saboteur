@@ -1,0 +1,20 @@
+{
+  "attester": "keys/attester.did",
+  "files": {
+    "capsules/claim-forge.sc.json": "capsule",
+    "capsules/entity-james.sc.json": "capsule",
+    "capsules/policy-writes.sc.json": "capsule",
+    "docs/charter.md": "artefact",
+    "docs/glossary.md": "artefact",
+    "frozen/spec-ledger.sc.json": "frozen",
+    "frozen/spec-sign.sc.json": "frozen",
+    "ledger.jsonl": "ledger",
+    "records/note-boot.sc.json": "record",
+    "records/note-morning.sc.json": "record",
+    "seals/seal-approve.json": "seal",
+    "seals/seal-refuse.json": "seal",
+    "store.db": "store",
+    "substrate.db": "substrate"
+  },
+  "owner": "keys/owner.did"
+}
