@@ -9,7 +9,7 @@ Function:
 
 Tier:      Tier 2 — The Saboteur
 Depends:   saboteur_v0_5.py, harness_guard_v2.py (unchanged)
-Version:   SPEC V0.5.1 0.5.1-dev
+Version:   SPEC V0.5.1 0.5.1
 Licence:   MSL-1.0
 Author:    James Gilbert (Giblets Forge)
 
@@ -83,5 +83,5 @@ POSIX (the VPS, Termux) it is `os.kill(pid, 0)`.
 
 ## Document control
 
-- **SPEC V0.5.1 0.5.1-dev**: 2026-11-20, by the VS Code AI on James's
-  "add lock for clashes".
+- **SPEC V0.5.1 0.5.1**: 2026-11-20, by the VS Code AI on James's
+  "add lock for clashes". Frozen 2026-11-20 (James: "freeze commit push").

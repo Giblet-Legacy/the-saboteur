@@ -58,7 +58,7 @@ v2's harness with `--target` required and the-full-stack refused:
 
     python saboteur_v0_4.py --target ../ledger-layer     # threats from threats_v0_4/
 
-## 0.5.1-dev: one run at a time (2026-11-20)
+## 0.5.1 (frozen 2026-11-20): one run at a time
 
     python saboteur_v0_5_1.py               # 0.5.0's run, inside a lock
 

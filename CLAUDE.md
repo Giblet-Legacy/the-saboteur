@@ -29,7 +29,7 @@ S24/Termux and laptop/VS Code. State is confirmed, never assumed. LF-only.
 British English (-ise, artefact). Good/Bad/Ugly CHANGELOG, latest at top.
 Header discipline on every file and function.
 
-## 0.5.1-dev (2026-11-20)
+## 0.5.1 (frozen 2026-11-20)
 Run `python saboteur_v0_5_1.py` (SPEC_V0_5_1.md): 0.5.0 inside a lock,
 `<parent>/saboteur.lock`. Every run shares `<parent>/run`, so two at
 once corrupt each other. Never stop a Saboteur process you did not start.

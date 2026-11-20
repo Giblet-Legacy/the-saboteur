@@ -34,7 +34,7 @@ Internal helpers:
 Tier:     Tier 2 — The Saboteur, 0.5.1
 Depends:  saboteur_v0_5.py, harness_guard_v2.py
 Spec:     SPEC_V0_5_1.md 0.5.1
-Version:  0.5.1-dev
+Version:  0.5.1 (frozen 2026-11-20)
 Licence:  MSL-1.0
 Author:   James Gilbert (Giblets Forge)
 """

@@ -4,6 +4,22 @@ CHANGELOG.md — build history for The Saboteur, latest entry at top.
 (The v1.0.0 entry below sits above the original title; it is kept as
 written. Entries from here on go at the top.)
 
+## [v0.5.1] — 2026-11-20 — frozen
+
+### Good
+- Frozen (James: "freeze commit push"). VERSION 0.5.1-dev -> 0.5.1.
+  The header says `0.5.1 (frozen 2026-11-20)`.
+- Tests: 40/40.
+- James's own full run before the lock was written, with no other run
+  going: PASS 100, FAIL 8, UGLY 0, SKIP 0.
+
+### Bad
+- The eight red threats from 0.5.0 stand (SPEC_V0_5 §7).
+- The frozen runners (v2, 0.4.0, 0.5.0) take no lock.
+
+### Ugly
+- No ugly items.
+
 ## [v0.5.1-dev] — 2026-11-20 — a lock, so two runs cannot clash
 
 ### Good
