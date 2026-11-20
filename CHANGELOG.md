@@ -4,6 +4,31 @@ CHANGELOG.md — build history for The Saboteur, latest entry at top.
 (The v1.0.0 entry below sits above the original title; it is kept as
 written. Entries from here on go at the top.)
 
+## [v0.5.1-dev] — 2026-11-20 — a lock, so two runs cannot clash
+
+### Good
+- James: "add lock for clashes". `saboteur_v0_5_1.py` (SPEC_V0_5_1.md)
+  runs 0.5.0 unchanged, inside a lock: `<parent>/saboteur.lock`,
+  created exclusively and holding the pid. A second run refuses, exit 2,
+  naming the holder. A lock left by a run killed hard is taken over. The
+  lock is released however the run ends.
+- Tests: `tests/test_saboteur_v0_5_1.py` (9), including two real runs
+  started together.
+
+### Bad
+- Two runs at once wiped each other's scratch copy (SPEC_V0_5_1 §1).
+  James's run gave a false SKIP (31) and a false UGLY (39). Two 0.5.0
+  runs, reproduced: one gave a false SKIP on 002, the other crashed
+  with WinError 32. The harness did not say why.
+- Only 0.5.1 takes the lock. The frozen runners still clash if started
+  alongside it.
+- The tests were written after the code. The clash itself was
+  reproduced red first.
+
+### Ugly
+- The clash came from the AI stopping what it took for its own
+  leftover run. It was James's run.
+
 ## [v0.5.0] — 2026-11-20 — frozen
 
 ### Good

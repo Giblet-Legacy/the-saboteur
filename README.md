@@ -58,6 +58,15 @@ v2's harness with `--target` required and the-full-stack refused:
 
     python saboteur_v0_4.py --target ../ledger-layer     # threats from threats_v0_4/
 
+## 0.5.1-dev: one run at a time (2026-11-20)
+
+    python saboteur_v0_5_1.py               # 0.5.0's run, inside a lock
+
+Every run uses the same scratch folder, so two at once spoil each
+other's results. 0.5.1 takes `%TEMP%\forge-saboteur\saboteur.lock`
+first. A second run refuses (exit 2) and names the run holding it.
+SPEC_V0_5_1.md.
+
 ## 0.5.0 (frozen 2026-11-20): 108 attacks on the Legacy's own layers (2026-11-20)
 
     python saboteur_v0_5.py                 # 108 threats against fixture_v0_5/
