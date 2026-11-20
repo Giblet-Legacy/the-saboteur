@@ -58,6 +58,16 @@ v2's harness with `--target` required and the-full-stack refused:
 
     python saboteur_v0_4.py --target ../ledger-layer     # threats from threats_v0_4/
 
+## 1.1.0 (frozen 2026-11-20): rotation
+
+    python saboteur_v1_1.py                 # this 6-hour slot: 250 of the 1000 (every 4th)
+    python saboteur_v1_1.py --slot 2        # a chosen slot
+    python saboteur_report_v1_1.py --write  # yesterday's report -> results/<day>/report.md
+
+The four slots of a day cover all 1000 threats. A slot is RED only for
+something new: a new failure, any UGLY or SKIP, or a known gap that
+starts passing (`known_gaps_v1_1.json`). See SPEC_V1_1.md.
+
 ## 1.0.0 (frozen 2026-11-20): one version, the same 1000 attacks
 
     python saboteur_v1.py                   # 1000 threats against fixture_v1/, inside the run lock

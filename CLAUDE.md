@@ -30,6 +30,15 @@ S24/Termux and laptop/VS Code. State is confirmed, never assumed. LF-only.
 British English (-ise, artefact). Good/Bad/Ugly CHANGELOG, latest at top.
 Header discipline on every file and function.
 
+## 1.1.0 (frozen 2026-11-20)
+Rotation (SPEC_V1_1.md): `saboteur_v1_1.py` runs one slot (250 of the 1000,
+interleaved, slot = UTC hour // 6), and `saboteur_report_v1_1.py` writes the
+daily report.
+
+- **Known gaps:** `known_gaps_v1_1.json` lists the 154 known reds. Change it
+  only on James's word, and record each change in the CHANGELOG.
+- **Results:** `results/` is git-ignored.
+
 ## 1.0.0 (frozen 2026-11-20)
 Run `python saboteur_v1.py` (SPEC_V1.md): the 0.9.0 chain consolidated into
 `saboteur_v1`, `mutations_v1` and `harness_guard_v1`, with `fixture_v1/`
