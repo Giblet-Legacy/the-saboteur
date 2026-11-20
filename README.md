@@ -8,10 +8,10 @@ Function:
     tools against it, and proves whether the tools fail loudly.
 
 Tier:     Tier 2 — The Saboteur (Adversarial Testing)
-Depends:  A target repo (e.g., the-full-stack, scp-substrate)
+Depends:  The Legacy layers it attacks (siblings, or FORGE_LEGACY_ROOT)
 Licence:  MSL-1.0
 Author:   James Gilbert (Giblets Forge)
-Status:   0.1.0-dev (in build, pre-freeze)
+Status:   1.0.0-dev (the 0.9.0 consolidation, branch consolidate-1.0.0)
 
 ## The Challenge
 Build a harness that attacks our own stack and proves every tool fails
@@ -57,6 +57,26 @@ layer involved in the legacy program." `saboteur_v0_4.py` (SPEC_V0_4.md) is
 v2's harness with `--target` required and the-full-stack refused:
 
     python saboteur_v0_4.py --target ../ledger-layer     # threats from threats_v0_4/
+
+## 1.0.0-dev: one version, the same 1000 attacks (2026-11-20)
+
+    python saboteur_v1.py                   # 1000 threats against fixture_v1/, inside the run lock
+    python saboteur_v1.py --only 08         # 0800–0899
+    python -m pytest -q                     # 65 tests (archive/ is never collected)
+
+1.0.0 consolidates the 0.9.0 chain (CONSOLIDATION_V1.md, SPEC_V1.md). It
+has one module of each kind, `saboteur_v1`, `mutations_v1` and
+`harness_guard_v1`, and nothing is swapped at run time. It does exactly
+what 0.9.0 did, with the same verdict on every threat:
+
+- `fixture_v1/` is the same fixture;
+- `threats_v1/` holds the same 1000 threats;
+- 154 are red, in 7 gap classes (SPEC_V1.md §6).
+
+Every older file is in `archive/0.9.0/`, byte-identical. To run an old
+version, use a worktree of the tag `v0.9.0`: archived layers import
+their siblings, so they don't run from `archive/`. Next is rotation, in
+1.1.0 (CONSOLIDATION_V1.md §8).
 
 ## 0.9.0 (frozen 2026-11-20): 1000 threats, the known gaps mapped
 

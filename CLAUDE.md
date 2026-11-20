@@ -3,17 +3,18 @@
 CLAUDE.md — Context briefing for AI assistants working in this repository.
 
 ## What this repo is
-Tier 2 — The Saboteur. A fault-injection harness. It takes a fresh clone
-of a target repo (e.g., `the-full-stack` or `scp-substrate`), applies
-one mutation at a time to a scratch copy, runs the real tools against
-it, and checks whether the tools fail loudly.
+Tier 2 — The Saboteur. A fault-injection harness. It takes a target
+(`fixture_v1/` by default: a small Legacy world made by the Legacy's own
+layers, with throwaway keys), applies one mutation at a time to a scratch
+copy, runs the real layer checks against it, and checks whether they fail
+loudly. the-full-stack is reference only and is refused as a target.
 
 ## The Discipline (non-negotiable)
 1. **Red first, then fix.** A guard that fails to catch a mutation is
    logged as Ugly. We do not fix it until the Saboteur proves it is
    broken.
 2. **Mutations are data, not code.** Every attack is a JSON spec in
-   `threats/`. A new attack is a new file, not a new Python function.
+   `threats_v1/`. A new attack is a new file, not a new Python function.
 3. **Layer fixes only.** If a target tool needs fixing, it is a NEW LAYER
    (e.g., `sign_v2.py`), never an edit to the frozen original.
 4. **No network.** The harness runs entirely on local file copies.
@@ -28,6 +29,22 @@ A silent pass is the worst outcome. It is recorded as Ugly.
 S24/Termux and laptop/VS Code. State is confirmed, never assumed. LF-only.
 British English (-ise, artefact). Good/Bad/Ugly CHANGELOG, latest at top.
 Header discipline on every file and function.
+
+## 1.0.0-dev (2026-11-20, branch consolidate-1.0.0)
+Run `python saboteur_v1.py` (SPEC_V1.md): the 0.9.0 chain consolidated into
+`saboteur_v1`, `mutations_v1` and `harness_guard_v1`, with `fixture_v1/`
+and `threats_v1/` (1000; 154 red, SPEC_V1 §6).
+
+- **Behaviour:** identical to 0.9.0. Nothing is swapped at run time.
+- **The archive:** every older file is in `archive/0.9.0/`, byte-identical,
+  never edited, and never collected by pytest (`pytest.ini`). Archived
+  layers don't run from there; use a worktree of the tag `v0.9.0`.
+- **Tests:** the carried tests are `tests/test_saboteur_<version>_at_v1.py`
+  (65). `tests/v1_threats.py` is the rule that makes `threats_v1/`.
+- **Anything new** is 1.1.0 and up. Rotation is next (CONSOLIDATION_V1.md
+  §8).
+- **Long runs:** run them in your own `--parent` in the scratchpad, never
+  stop a run you didn't start, and leave the default lock to James.
 
 ## 0.9.0 (frozen 2026-11-20)
 Run `python saboteur_v0_9.py` (SPEC_V0_9.md): 1000 threats, numbered 0001–1000,
