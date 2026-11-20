@@ -26,7 +26,7 @@ Helpers:
 
 Tier:     Tier 2 — The Saboteur, 1.1.0
 Spec:     SPEC_V1_1.md 1.1.0
-Version:  1.1.0-dev
+Version:  1.1.0 (frozen 2026-11-20)
 Licence:  MSL-1.0
 Author:   James Gilbert (Giblets Forge)
 """

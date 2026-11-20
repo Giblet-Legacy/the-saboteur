@@ -30,7 +30,7 @@ S24/Termux and laptop/VS Code. State is confirmed, never assumed. LF-only.
 British English (-ise, artefact). Good/Bad/Ugly CHANGELOG, latest at top.
 Header discipline on every file and function.
 
-## 1.1.0-dev (2026-11-20)
+## 1.1.0 (frozen 2026-11-20)
 Rotation (SPEC_V1_1.md): `saboteur_v1_1.py` runs one slot (250 of the 1000,
 interleaved, slot = UTC hour // 6), and `saboteur_report_v1_1.py` writes the
 daily report.

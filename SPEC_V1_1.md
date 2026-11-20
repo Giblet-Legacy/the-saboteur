@@ -16,7 +16,7 @@ Function:
 Tier:      Tier 2 — The Saboteur
 Depends:   saboteur_v1.py (load_threats, run_threat, acquire, release),
            harness_guard_v1.py
-Version:   SPEC V1.1 1.1.0-dev
+Version:   SPEC V1.1 1.1.0
 Licence:   MSL-1.0
 Author:    James Gilbert (Giblets Forge)
 
@@ -144,5 +144,7 @@ laptop through a scheduled task. James chooses. Either way:
 
 ## Document control
 
-- **SPEC V1.1 1.1.0-dev**: 2026-11-20, by the VS Code AI on James's
+- **SPEC V1.1 1.1.0**: 2026-11-20, by the VS Code AI on James's
   "start rotation".
+- Frozen 2026-11-20 (James: "freeze commit push"). The first real slot was
+  GREEN (slot 3: PASS 212, FAIL 38, all 38 known gaps).

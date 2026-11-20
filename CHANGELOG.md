@@ -4,6 +4,22 @@ CHANGELOG.md — build history for The Saboteur, latest entry at top.
 (The v1.0.0 entry below sits above the original title; it is kept as
 written. Entries from here on go at the top.)
 
+## [v1.1.0] — 2026-11-20 — frozen
+
+### Good
+- Frozen (James: "freeze commit push"). VERSION 1.1.0-dev -> 1.1.0, and
+  the headers say `1.1.0 (frozen 2026-11-20)`. Merged into main in one
+  commit and tagged `v1.1.0`.
+- Tests: 76/76. The first real slot was GREEN.
+
+### Bad
+- Rotation starts on the VPS only when James runs forge_check_v3.sh
+  (roadmap VPS.md Appendix F).
+- The 154 known gaps stand.
+
+### Ugly
+- No ugly items.
+
 ## [v1.1.0-dev] — 2026-11-20 — rotation
 
 ### Good

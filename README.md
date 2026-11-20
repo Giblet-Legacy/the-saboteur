@@ -58,7 +58,7 @@ v2's harness with `--target` required and the-full-stack refused:
 
     python saboteur_v0_4.py --target ../ledger-layer     # threats from threats_v0_4/
 
-## 1.1.0-dev: rotation (2026-11-20)
+## 1.1.0 (frozen 2026-11-20): rotation
 
     python saboteur_v1_1.py                 # this 6-hour slot: 250 of the 1000 (every 4th)
     python saboteur_v1_1.py --slot 2        # a chosen slot
