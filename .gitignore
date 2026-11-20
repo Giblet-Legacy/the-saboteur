@@ -6,3 +6,4 @@ scratch/
 !fixture_v0_5/*.db
 !fixture_v1/*.db
 !archive/0.9.0/fixture_v0_5/*.db
+results/

@@ -4,6 +4,44 @@ CHANGELOG.md — build history for The Saboteur, latest entry at top.
 (The v1.0.0 entry below sits above the original title; it is kept as
 written. Entries from here on go at the top.)
 
+## [v1.1.0-dev] — 2026-11-20 — rotation
+
+### Good
+- James: test 250 every 6 hours, not the same 250, all in 24 hours, with
+  a report; then "start rotation". `saboteur_v1_1.py` (SPEC_V1_1.md)
+  runs one slot:
+  - 250 of the 1000, interleaved (slot K takes every 4th threat from
+    K), so each run reaches every layer;
+  - the slot comes from the UTC hour, or from `--slot`;
+  - it is 1.0.0's run, using the same lock;
+  - it writes `results/<day>/slot-<K>.json`.
+- `known_gaps_v1_1.json` holds the 154 reds from the 1.0.0 gate, each
+  with its class. A slot is RED only for a new problem, any UGLY or
+  SKIP, or a known gap that starts passing.
+- `saboteur_report_v1_1.py` makes the daily report: the slots that ran
+  and are missing, coverage, totals, new and healed, the reds by class,
+  and changes since the day before.
+- Tests: `tests/test_saboteur_v1_1.py` (11), written first and run red.
+- First real slot (slot 3 at 23:44 UTC, 2026-11-20): 250 of the 1000 ran in
+  4 minutes. PASS 212, FAIL 38, and all 38 were known gaps. 0 new, 0
+  healed, 0 UGLY, 0 SKIP: GREEN. The hour-long full runs earlier in the
+  day were mostly two runs competing for the laptop.
+- The agent check on 1.0.0 passes its archive check run on its own:
+  2,603 archived files are byte-identical.
+
+### Bad
+- Rotation runs only where a 6-hourly timer runs it. The VPS script
+  (roadmap VPS.md, forge_check_v3.sh) is James's to run.
+- `results/` lives in the working copy, git-ignored, so each machine
+  keeps its own.
+- agent-layer's archive check ignores git's return codes. Run while
+  commits were landing in the same repo, it reported archived files as
+  "changed" (008–032 of threats_v0_5). They were not. That is
+  agent-layer's to fix, when James decides.
+
+### Ugly
+- No ugly items.
+
 ## [v1.0.0] — 2026-11-20 — frozen: the 0.9.0 consolidation
 
 (The `[v1.0.0]` entry further down is the original `saboteur.py`,

@@ -1,3 +1,3 @@
-# 1.0.0 — frozen 2026-11-20 (James: "step 8"): the 0.9.0 consolidation. saboteur_v1.py, threats_v1/ (1000; 154 red), 65/65; gate: all 1000 verdicts identical to 0.9.0. Tag v1.0.0. Next: 1.1.0 rotation.
+# 1.1.0-dev — 2026-11-20 (James: "start rotation"): saboteur_v1_1.py (250 per 6-hour slot), known_gaps_v1_1.json (154), saboteur_report_v1_1.py; 1.0.0 frozen beneath it.
 
-1.0.0
+1.1.0-dev
