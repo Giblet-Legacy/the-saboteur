@@ -58,7 +58,7 @@ v2's harness with `--target` required and the-full-stack refused:
 
     python saboteur_v0_4.py --target ../ledger-layer     # threats from threats_v0_4/
 
-## 0.5.0-dev: 108 attacks on the Legacy's own layers (2026-11-20)
+## 0.5.0 (frozen 2026-11-20): 108 attacks on the Legacy's own layers (2026-11-20)
 
     python saboteur_v0_5.py                 # 108 threats against fixture_v0_5/
     python saboteur_v0_5.py --only 09       # 091–099 (the HAL seals)

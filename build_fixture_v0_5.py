@@ -30,7 +30,7 @@ Depends:  envelope_v2, sign_v2, freeze_v2, ledger_v2, genesis_v3,
           record_v2, hal_v2, store_v2_1, substrate_v4 (siblings of
           the-saboteur, or FORGE_LEGACY_ROOT)
 Spec:     SPEC_V0_5.md 0.5.0
-Version:  0.5.0-dev
+Version:  0.5.0 (frozen 2026-11-20)
 Licence:  MSL-1.0
 Author:   James Gilbert (Giblets Forge)
 """

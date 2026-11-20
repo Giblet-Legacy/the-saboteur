@@ -188,4 +188,4 @@ With the frozen suites: 31/31.
 ## Document control
 
 - **SPEC V0.5 0.5.0**: 2026-11-20, by the VS Code AI on James's "yes lets
-  a a ton more". Not yet frozen.
+  a a ton more". Frozen 2026-11-20 (James: "freeze commit push").

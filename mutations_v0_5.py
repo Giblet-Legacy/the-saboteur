@@ -54,7 +54,7 @@ Tier:     Tier 2 — The Saboteur, 0.5.0
 Depends:  mutations_v2.py; envelope_v2, sign_v2, freeze_v2,
           substrate_v2 (forgeries only); cryptography
 Spec:     SPEC_V0_5.md 0.5.0
-Version:  0.5.0-dev
+Version:  0.5.0 (frozen 2026-11-20)
 Licence:  MSL-1.0
 Author:   James Gilbert (Giblets Forge)
 """

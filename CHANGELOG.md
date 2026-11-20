@@ -4,6 +4,23 @@ CHANGELOG.md — build history for The Saboteur, latest entry at top.
 (The v1.0.0 entry below sits above the original title; it is kept as
 written. Entries from here on go at the top.)
 
+## [v0.5.0] — 2026-11-20 — frozen
+
+### Good
+- Frozen (James: "freeze commit push"). VERSION 0.5.0-dev -> 0.5.0.
+  Headers say `0.5.0 (frozen 2026-11-20)`.
+- Tests: 31/31. Full run: PASS 100, FAIL 8, UGLY 0, SKIP 0.
+- The committed fixture, exported fresh from git, is byte-identical and
+  passes its 17 checks.
+
+### Bad
+- The eight red threats stand (SPEC_V0_5 §7). Each fix is a new layer in
+  its repository, when James decides.
+- The VPS check runs the Saboteur's tests, not a 0.5.0 run.
+
+### Ugly
+- No ugly items.
+
 ## [v0.5.0-dev] — 2026-11-20 — 108 threats against the Legacy's own layers
 
 ### Good

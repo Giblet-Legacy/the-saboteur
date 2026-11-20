@@ -33,7 +33,7 @@ Internal helpers:
 
 Tier:     Tier 2 — The Saboteur, 0.5.0
 Spec:     SPEC_V0_5.md 0.5.0
-Version:  0.5.0-dev
+Version:  0.5.0 (frozen 2026-11-20)
 Licence:  MSL-1.0
 Author:   James Gilbert (Giblets Forge)
 """
